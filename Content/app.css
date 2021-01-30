@@ -1,1 +1,7 @@
 /* custom css goes here */
+
+body {
+    background-image: url('../Assets/finnlogo.ico');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
