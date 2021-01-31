@@ -111,9 +111,11 @@ let myContact =
       aboutScottTextContainer.appendChild(aboutScottText);
             
       // Button to view Scott resume
-      const scottResumeButton = document.createElement("btn");
+      const scottResumeButton = document.createElement("a");
       scottResumeButton.innerText = "View Resume";
       scottResumeButton.classList.add("btn", "btn-success");
+      scottResumeButton.setAttribute("href", "./Assets/ScottAltonResume.pdf");
+      scottResumeButton.setAttribute("target", "_blank");
       aboutScottTextContainer.appendChild(scottResumeButton);
 
       // Scott image
@@ -140,14 +142,16 @@ let myContact =
       
       
       // Button to view Nick resume
-      const nickResumeButton = document.createElement("btn");
+      const nickResumeButton = document.createElement("a");
       nickResumeButton.innerText = "View Resume";
       nickResumeButton.classList.add("btn", "btn-success");
+      nickResumeButton.setAttribute("href", "./Assets/ScottAltonResume.pdf");
+      nickResumeButton.setAttribute("target", "_blank");
       aboutNickTextContainer.appendChild(nickResumeButton);
 
       // Nick image
       const aboutNickImage = document.createElement("div");
-      aboutNickImage.innerHTML = `<img src="../Assets/scottaltonpic.jpg" class="col-lg-6" />`
+      aboutNickImage.innerHTML = `<img src="../Assets/nick.jpg" class="col-lg-6" />`
       aboutNickImage.classList.add("col-lg-4");
       aboutNickContainer.classList.add("row");
       
@@ -173,7 +177,7 @@ let myContact =
 
     function displayProjects()
     {
-
+      //
     }
 
     function displayServices()
@@ -256,6 +260,9 @@ let myContact =
     {
         console.log("App Started...");
 
+        // Dynamically update Products nav link to Projects
+        document.querySelectorAll('nav ul li a')[2].innerHTML = '<i class="fa fa-code"></i> Projects';
+        
         switch (document.title) 
         {
           case "Home":
