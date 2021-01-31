@@ -167,7 +167,30 @@ let myContact =
 
     function displayProjects()
     {
-      //
+      // Store array of projects
+      let scottProjects = [
+        {
+          name: "The Shoppies Awards",
+          technologies: ["react", "css", "bootstrap"],
+          image: "./Assets/shoppies.jpg",
+          github: "https://github.com/alto4/ShoppiesAwardsApp",
+          demo: "https://shoppies-awards-2021.netlify.app/" 
+        },
+        {
+          name: "Currency Converter",
+          technologies: ["react", "css", "bootstrap"],
+          image: "./Assets/currency-converter.jpg",
+          github: "https://github.com/alto4/SACurrencyExchange",
+          demo: "https://sacurrency.herokuapp.com" 
+        },
+        {
+          name: "SA Corp. CRM",
+          technologies: ["php", "postgresql", "bootstrap"],
+          image: "./Assets/shoppies.jpg",
+          github: "https://github.com/alto4/SACorpPHP/tree/master/htdocs/WEBD3201/Lab4/lab4",
+          demo: "https://screenrec.com/share/8Lu5gH9Wwm" 
+        },
+      ]
     }
 
     function displayServices()
