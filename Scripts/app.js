@@ -98,34 +98,67 @@ let myContact =
       container.appendChild(heading);
       
       // About Scott 
-      const aboutContainer = document.createElement("div");
-      const aboutTextContainer = document.createElement("div");
-      const aboutText = document.createElement("p");
-      aboutTextContainer.classList.add("col-lg-6", "p-4");
-      aboutText.innerText = "Scott is a full-stack developer based in Whitby, Ontario. I enjoy woring with JavaScript, Ruby on Rails,\
+      const aboutScottContainer = document.createElement("div");
+      const aboutScottTextContainer = document.createElement("div");
+      aboutScottTextContainer.innerHTML = '<h3 class="pb-4">Scott Alton</h3>';
+      const aboutScottText = document.createElement("p");
+      aboutScottContainer.classList.add("my-5", "border-bottom", "p-4");
+      aboutScottTextContainer.classList.add("col-lg-6", "p-4");
+      aboutScottText.innerText = "Scott is a full-stack developer based in Whitby, Ontario. I enjoy woring with JavaScript, Ruby on Rails,\
        and C#. Before coming to Durham College and pursuing a change in career direction, I worked as a cook and musician, and also \
        teach guitar and piano lessons. I love creating things from scratching and breaking down complex problems.";
       
-      aboutTextContainer.appendChild(aboutText);
-      
-      
+      aboutScottTextContainer.appendChild(aboutScottText);
+            
       // Button to view Scott resume
-      const resumeButton = document.createElement("btn");
-      resumeButton.innerText = "View Resume";
-      resumeButton.classList.add("btn", "btn-success");
-      aboutTextContainer.appendChild(resumeButton);
+      const scottResumeButton = document.createElement("btn");
+      scottResumeButton.innerText = "View Resume";
+      scottResumeButton.classList.add("btn", "btn-success");
+      aboutScottTextContainer.appendChild(scottResumeButton);
 
-       const aboutImage = document.createElement("div");
-      aboutImage.innerHTML = `<img src="../Assets/scottaltonpic.jpg" class="col-lg-6" />`
-      aboutImage.classList.add("col-lg-6");
-      aboutContainer.classList.add("row");
+      // Scott image
+      const aboutScottImage = document.createElement("div");
+      aboutScottImage.innerHTML = `<img src="../Assets/scottaltonpic.jpg" class="col-lg-6" />`
+      aboutScottImage.classList.add("col-lg-4");
+      aboutScottContainer.classList.add("row");
       
-      aboutContainer.innerHTML = "<h3>Scott Alton</h3>";
-      aboutContainer.appendChild(aboutTextContainer);
-      aboutContainer.appendChild(aboutImage);
-      container.appendChild(aboutContainer);
+      // Inject elements into about container
+      aboutScottContainer.appendChild(aboutScottTextContainer);
+      aboutScottContainer.appendChild(aboutScottImage);
+
+      // About Nick
+      const aboutNickContainer = document.createElement("div");
+      const aboutNickTextContainer = document.createElement("div");
+      aboutNickTextContainer.innerHTML = "<h3>Nick Sturch-Flint</h3>";
+      const aboutNickText = document.createElement("p");
+      aboutNickTextContainer.classList.add("col-lg-6", "p-4");
+      aboutNickText.innerText = "Nick is a full-stack developer based in Oshawa, Ontario. I enjoy woring with JavaScript, Ruby on Rails,\
+       and C#. Before coming to Durham College and pursuing a change in career direction, I worked as a cook and musician, and also \
+       teach guitar and piano lessons. I love creating things from scratching and breaking down complex problems.";
+      
+      aboutNickTextContainer.appendChild(aboutNickText);
       
       
+      // Button to view Nick resume
+      const nickResumeButton = document.createElement("btn");
+      nickResumeButton.innerText = "View Resume";
+      nickResumeButton.classList.add("btn", "btn-success");
+      aboutNickTextContainer.appendChild(nickResumeButton);
+
+      // Nick image
+      const aboutNickImage = document.createElement("div");
+      aboutNickImage.innerHTML = `<img src="../Assets/scottaltonpic.jpg" class="col-lg-6" />`
+      aboutNickImage.classList.add("col-lg-4");
+      aboutNickContainer.classList.add("row");
+      
+      // Inject elements into about container
+      aboutNickContainer.appendChild(aboutNickImage);
+      aboutNickContainer.appendChild(aboutNickTextContainer);
+      
+
+      container.appendChild(aboutScottContainer);
+      container.appendChild(aboutNickContainer);
+
       // Scott picture
       // Nick picture
       // About Nick
