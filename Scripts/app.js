@@ -186,11 +186,64 @@ let myContact =
         {
           name: "SA Corp. CRM",
           technologies: ["php", "postgresql", "bootstrap"],
-          image: "./Assets/shoppies.jpg",
+          image: "./Assets/sacorp.jpg",
           github: "https://github.com/alto4/SACorpPHP/tree/master/htdocs/WEBD3201/Lab4/lab4",
           demo: "https://screenrec.com/share/8Lu5gH9Wwm" 
         },
+      ];
+
+      let nickProjects = [
+        {
+          name: "Sweet Project #1",
+          technologies: ["html", "css", "bootstrap"],
+          image: "./Assets/finnlogo.png",
+          github: "#",
+          demo: "#" 
+        },
+        {
+          name: "Sweet Project #2",
+          technologies: ["html", "css", "bootstrap"],
+          image: "./Assets/finnlogo.png",
+          github: "#",
+          demo: "#" 
+        },
+        {
+          name: "Sweet Project #3",
+          technologies: ["html", "css", "bootstrap"],
+          image: "./Assets/finnlogo.png",
+          github: "#",
+          demo: "#" 
+        },
       ]
+
+      let container = document.querySelector(".container");
+      let projectsContainer = document.createElement("div");
+      projectsContainer.classList += "container mx-auto row projects";
+      container.after(projectsContainer);
+      let projectsHTML = "";
+
+      /**
+       * displayProjects - renders an array of project objects into DOM
+       */
+      function displayProjects(projects) {
+        projects.forEach(project => {
+          const { name, technologies, image, github, demo } = project;
+           projectsHTML += `
+            <div class="card text-center col-md-6 col-lg-4 p-4">
+              <h4>${name}</h4>
+              <img src="${image}"class="mx-auto" />
+              <div class="row p-4">
+                <a href="${github}" target="_blank" class="col-6 btn btn-dark">Code</a>
+                <a href="${demo}" target="_blank" class="col-6 btn btn-success">Demo</a>
+              </div>
+            </div>
+          `;
+        });
+      }
+
+      displayProjects([...scottProjects, ...nickProjects]);
+
+      document.querySelector('.projects').innerHTML += projectsHTML;
     }
 
     function displayServices()
