@@ -89,20 +89,21 @@ let myContact =
     function displayAbout()
     {
       // Grab container element
-      const container = document.querySelector(".container");
+      let container = document.querySelector(".container");
+
       // Heading
-      const heading = document.createElement("h1");
+      let heading = document.createElement("h1");
       heading.innerText = "Meet Scott & Nick";
       heading.style.textDecoration = "underline";
       heading.style.textDecorationColor = "green";
       container.appendChild(heading);
       
       // About Scott 
-      const aboutScottContainer = document.createElement("div");
-      const aboutScottTextContainer = document.createElement("div");
+      let aboutScottContainer = document.createElement("div");
+      let aboutScottTextContainer = document.createElement("div");
       aboutScottTextContainer.innerHTML = '<h3 class="pb-4">Scott Alton</h3>';
-      const aboutScottText = document.createElement("p");
-      aboutScottContainer.classList.add("my-5", "border-bottom", "p-4");
+      let aboutScottText = document.createElement("p");
+      aboutScottContainer.classList.add("my-5", "border-bottom", "p-4", "justify-content-center");
       aboutScottTextContainer.classList.add("col-lg-6", "p-4");
       aboutScottText.innerText = "Scott is a full-stack developer based in Whitby, Ontario. I enjoy woring with JavaScript, Ruby on Rails,\
        and C#. Before coming to Durham College and pursuing a change in career direction, I worked as a cook and musician, and also \
@@ -111,7 +112,7 @@ let myContact =
       aboutScottTextContainer.appendChild(aboutScottText);
             
       // Button to view Scott resume
-      const scottResumeButton = document.createElement("a");
+      let scottResumeButton = document.createElement("a");
       scottResumeButton.innerText = "View Resume";
       scottResumeButton.classList.add("btn", "btn-success");
       scottResumeButton.setAttribute("href", "./Assets/ScottAltonResume.pdf");
@@ -119,7 +120,7 @@ let myContact =
       aboutScottTextContainer.appendChild(scottResumeButton);
 
       // Scott image
-      const aboutScottImage = document.createElement("div");
+      let aboutScottImage = document.createElement("div");
       aboutScottImage.innerHTML = `<img src="../Assets/scottaltonpic.jpg" class="col-lg-6" />`
       aboutScottImage.classList.add("col-lg-4");
       aboutScottContainer.classList.add("row");
@@ -129,50 +130,39 @@ let myContact =
       aboutScottContainer.appendChild(aboutScottImage);
 
       // About Nick
-      const aboutNickContainer = document.createElement("div");
-      const aboutNickTextContainer = document.createElement("div");
+      let aboutNickContainer = document.createElement("div");
+      let aboutNickTextContainer = document.createElement("div");
+      aboutNickContainer.classList.add("my-5", "p-4", "justify-content-center");
       aboutNickTextContainer.innerHTML = "<h3>Nick Sturch-Flint</h3>";
-      const aboutNickText = document.createElement("p");
+      let aboutNickText = document.createElement("p");
       aboutNickTextContainer.classList.add("col-lg-6", "p-4");
       aboutNickText.innerText = "Nick is a full-stack developer based in Oshawa, Ontario. I enjoy woring with JavaScript, Ruby on Rails,\
        and C#. Before coming to Durham College and pursuing a change in career direction, I worked as a cook and musician, and also \
        teach guitar and piano lessons. I love creating things from scratching and breaking down complex problems.";
-      
       aboutNickTextContainer.appendChild(aboutNickText);
       
       
       // Button to view Nick resume
-      const nickResumeButton = document.createElement("a");
+      let nickResumeButton = document.createElement("a");
       nickResumeButton.innerText = "View Resume";
       nickResumeButton.classList.add("btn", "btn-success");
       nickResumeButton.setAttribute("href", "./Assets/ScottAltonResume.pdf");
       nickResumeButton.setAttribute("target", "_blank");
-      aboutNickTextContainer.appendChild(nickResumeButton);
-
-      // Nick image
-      const aboutNickImage = document.createElement("div");
+      
+      // Nick image element 
+      let aboutNickImage = document.createElement("div");
       aboutNickImage.innerHTML = `<img src="../Assets/nick.jpg" class="col-lg-6" />`
       aboutNickImage.classList.add("col-lg-4");
       aboutNickContainer.classList.add("row");
       
       // Inject elements into about container
       aboutNickContainer.appendChild(aboutNickImage);
+      aboutNickTextContainer.appendChild(nickResumeButton);
       aboutNickContainer.appendChild(aboutNickTextContainer);
       
-
       container.appendChild(aboutScottContainer);
       container.appendChild(aboutNickContainer);
-
-      // Scott picture
-      // Nick picture
-      // About Nick
-      // Button to view Nick resume
-      // Button to view projects and contact
-        let newParagraph = document.createElement("p");
-        let subheadingText = "About Scott & Nick";
-
-        let paragraphOneElement = document.getElementById("paragraphOne");
-  
+       
     }
 
     function displayProjects()
@@ -187,6 +177,13 @@ let myContact =
 
     function displayContact()
     {
+
+        let heading = document.querySelector("h1");
+        let subHeading = document.createElement("p");
+        subHeading.className += "lead w-50 mb-4 text-bold mx-auto";
+        subHeading.innerText = "Get in touch to discuss your next project today! We are always looking to take on exciting work."
+        heading.after(subHeading);
+
         let messageArea = document.getElementById("messageArea");
         messageArea.hidden = true;
 
@@ -198,7 +195,7 @@ let myContact =
                 fullName.focus();
                 fullName.select();
                 messageArea.hidden = false;
-                messageArea.className = "alert alert-danger";
+                messageArea.className = "alert alert-danger w-50 mx-auto";
                 messageArea.textContent = "Please enter an appropriate Name";
             }
             else
@@ -222,7 +219,8 @@ let myContact =
             fullName.value = "";
             contactNumber.value = "";
             emailAddress.value = "";
-        });
+            message.value = "";
+          });
     }
     function displayContactList()
     {
@@ -261,8 +259,20 @@ let myContact =
         console.log("App Started...");
 
         // Dynamically update Products nav link to Projects
-        document.querySelectorAll('nav ul li a')[2].innerHTML = '<i class="fa fa-code"></i> Projects';
+        document.querySelectorAll("nav ul li a")[1].innerHTML = '<i class="fa fa-code"></i> Projects';
         
+        // Create new nav link item and inject into navbar after about us
+        const navLinkItem = document.createElement("li");
+        navLinkItem.classList.add("nav-item");
+        const navLink = document.createElement("a");
+        navLink.classList.add("nav-link");
+        navLink.setAttribute("href", "human-resources.html")
+        navLink.innerHTML = '<i class="fa fa-globe"></i> Human Resources';
+        navLinkItem.appendChild(navLink);
+        
+        document.querySelectorAll("nav ul li")[3].after(navLinkItem)
+
+
         switch (document.title) 
         {
           case "Home":
