@@ -25,7 +25,7 @@ let myContact =
       function bgFunction()
       {
       //  mainContent.insertAdjacentHTML(mainContent, "<p>This was added by a butto</p>")
-        document.body.style.backgroundImage = "url('Assets/finnlogo.png')";
+        document.body.style.backgroundImage = "url('Assets/')";
       }
       document.body.style.backgroundColor = "#F3F3F3";
       //document.querySelector("main").style.background = "url(../Assets/finnlogo.ico)";

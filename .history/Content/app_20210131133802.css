@@ -4,4 +4,6 @@
     background-image: url('../Assets/finnlogo.png');
     background-repeat: repeat;
     background-size: cover;
+    width: 150px;
+    height: 150px;
 }

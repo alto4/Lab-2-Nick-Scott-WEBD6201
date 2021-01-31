@@ -1,0 +1,7 @@
+/* custom css goes here */
+
+body {
+    background-image: url('../Assets/scottaltonpic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

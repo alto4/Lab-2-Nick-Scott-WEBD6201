@@ -1,6 +1,6 @@
 /* custom css goes here */
 
-.finn {
+body {
     background-image: url('../Assets/finnlogo.png');
     background-repeat: repeat;
     background-size: cover;
