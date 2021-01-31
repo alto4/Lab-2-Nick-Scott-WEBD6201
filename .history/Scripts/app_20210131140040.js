@@ -25,11 +25,11 @@ let myContact =
       function bgFunction()
       {
       //  mainContent.insertAdjacentHTML(mainContent, "<p>This was added by a butto</p>")
-        document.body.style.backgroundImage = "url('Assets/finn.png')";
+        document.body.style.backgroundImage = "url('Assets/finnlogo.png')";
 
       }
       document.body.style.backgroundColor = "#49A4B0";
-      //document.querySelector("body").style.background = "url(../Assets/finn.png)";
+      document.getElementsByTagName("body").style.background = "url(../Assets/finn.png)";
       
         let paragraphOneText =
           "This is a simple site to demonstrate DOM Manipulation for ICE 1";

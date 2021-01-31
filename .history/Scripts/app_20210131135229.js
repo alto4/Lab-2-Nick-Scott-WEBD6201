@@ -28,8 +28,8 @@ let myContact =
         document.body.style.backgroundImage = "url('Assets/finn.png')";
 
       }
-      document.body.style.backgroundColor = "#49A4B0";
-      //document.querySelector("body").style.background = "url(../Assets/finn.png)";
+      document.body.style.backgroundColor = "#F3F3F3";
+      //document.querySelector("main").style.background = "url(../Assets/finnlogo.ico)";
       
         let paragraphOneText =
           "This is a simple site to demonstrate DOM Manipulation for ICE 1";
@@ -75,9 +75,9 @@ let myContact =
         // update / modification
         //mainContent.firstElementChild.textContent = "Welcome Home!";
 
-        mainContent.innerHTML = `<h1 id="firstHeading" class="text-light outline">Welcome to WEBD6201 - Lab 1</h1>
+        mainContent.innerHTML = `<h1 id="firstHeading">Welcome to WEBD6201 - Lab 1</h1>
         <button type="button" id="updateBackground" class="btn-lg btn-dark">Update Background Colour!</button>
-         <p id="paragraphOne" class="fs-3 fw-bold text-light outline">This is my first Paragraph</p>
+         <p id="paragraphOne" class="fs-3 fw-bold">This is my first Paragraph</p>
         `;
 
       const backgroundButton = document.querySelector('#updateBackground');
