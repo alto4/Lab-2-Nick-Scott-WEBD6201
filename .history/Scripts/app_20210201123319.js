@@ -332,9 +332,9 @@ let myContact =
             message.value = "";
           });
     }
-//#endregion
 
-//#region CONTACT LIST DISPLAY PAGE CONTENT
+    
+
     function displayContactList()
     {
 
@@ -366,7 +366,6 @@ let myContact =
 
 
     }
-//#endregion
 
     function Start()
     {

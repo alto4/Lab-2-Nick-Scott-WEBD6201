@@ -334,7 +334,7 @@ let myContact =
     }
 //#endregion
 
-//#region CONTACT LIST DISPLAY PAGE CONTENT
+E
     function displayContactList()
     {
 
@@ -366,7 +366,6 @@ let myContact =
 
 
     }
-//#endregion
 
     function Start()
     {

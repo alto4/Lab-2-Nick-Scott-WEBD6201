@@ -366,7 +366,6 @@ let myContact =
 
 
     }
-//#endregion
 
     function Start()
     {

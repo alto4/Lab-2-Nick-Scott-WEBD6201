@@ -275,16 +275,13 @@ let myContact =
 
       document.querySelector('.projects').innerHTML += projectsHTML;
     }
-//#endregion
+////#endregion
 
-//#region SERVICES PAGE CONTENT
     function displayServices()
     {
 
     }
-//#endregion
 
-//#region CONTACT PAGE CONTENT
     function displayContact()
     {
 
@@ -332,9 +329,6 @@ let myContact =
             message.value = "";
           });
     }
-//#endregion
-
-//#region CONTACT LIST DISPLAY PAGE CONTENT
     function displayContactList()
     {
 
@@ -366,7 +360,6 @@ let myContact =
 
 
     }
-//#endregion
 
     function Start()
     {

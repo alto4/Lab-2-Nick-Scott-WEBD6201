@@ -16,7 +16,7 @@ let myContact =
 
 };*/
 
-//#region HOME/INDEX PAGE CONTENT
+//#region 
 (function()
 {
 
@@ -113,7 +113,7 @@ let myContact =
     }
 //#endregion
 
-//#region ABOUT PAGE CONTENT
+
     function displayAbout()
     {
       // Grab container element
@@ -192,9 +192,7 @@ let myContact =
       container.appendChild(aboutNickContainer);
        
     }
-//#endregion
 
-//#region PROJECTS/PRODUCTS PAGE CONTENT
     function displayProjects()
     {
       // Store array of projects
@@ -275,16 +273,12 @@ let myContact =
 
       document.querySelector('.projects').innerHTML += projectsHTML;
     }
-//#endregion
 
-//#region SERVICES PAGE CONTENT
     function displayServices()
     {
 
     }
-//#endregion
 
-//#region CONTACT PAGE CONTENT
     function displayContact()
     {
 
@@ -332,9 +326,6 @@ let myContact =
             message.value = "";
           });
     }
-//#endregion
-
-//#region CONTACT LIST DISPLAY PAGE CONTENT
     function displayContactList()
     {
 
@@ -366,7 +357,6 @@ let myContact =
 
 
     }
-//#endregion
 
     function Start()
     {
