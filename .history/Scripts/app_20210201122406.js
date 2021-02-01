@@ -22,25 +22,29 @@ let myContact =
 
     function displayHome()
     {
-      //Sets the default Background Image and Colour
       document.body.style.backgroundColor = "#49A4B0";
       document.body.style.backgroundImage = "url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)";
 
-      //Updates the background when the Finn Button is pressed!
       function finnBackground()
       {
         document.body.style.backgroundImage = "url('Assets/finn.png')";
       }
-      //Updates the background when the Chef Button is pressed!
       function chefBackground()
       {
         document.body.style.backgroundImage = "url('Assets/nick.jpg')";
       }
-      //Updates the background when the Revert Button is pressed!
       function revertBackground()
       {
         document.body.style.backgroundImage = "url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)";
       }
+
+      //document.querySelector("body").style.background = "url(../Assets/finn.png)";
+      
+        //let paragraphOneText = "This is a simple site to demonstrate DOM Manipulation for ICE 1";
+        //let paragraphOneElement = document.getElementById("paragraphOne");
+
+        //paragraphOneElement.textContent = paragraphOneText;
+        //paragraphOneElement.className = "fs-5";
 
         // Step 1. document.createElement
         let homeTitle = document.createElement("h1");
@@ -49,6 +53,7 @@ let myContact =
         let finnButton = document.createElement("button");
         let chefButton = document.createElement("button");
         let revertButton = document.createElement("button");
+        //let newParagraph = document.createElement("p");
 
         // Step 2. configure the elements
         homeTitle.setAttribute("id","homeHeader");
@@ -57,15 +62,13 @@ let myContact =
 
         //Button Configuration
         finnButton.setAttribute("id", "finnButton");
-        finnButton.setAttribute("class", "btn-lg btn-secondary outline");
+        finnButton.setAttribute("class", "")
         finnButton.textContent = "Finn!";
         finnButton.addEventListener("click", finnBackground);
         chefButton.setAttribute("id", "chefButton");
-        chefButton.setAttribute("class", "btn-lg btn-secondary outline");
         chefButton.textContent = "Chef!";
         chefButton.addEventListener("click", chefBackground);
         revertButton.setAttribute("id", "revertButton");
-        revertButton.setAttribute("class", "btn-lg btn-secondary outline");
         revertButton.textContent = "Original!";
         revertButton.addEventListener("click", revertBackground);
 
@@ -77,39 +80,59 @@ let myContact =
         backgroundButtons.appendChild(finnButton);
         backgroundButtons.appendChild(chefButton);
         backgroundButtons.appendChild(revertButton);
+        //newParagraph.setAttribute("id", "paragraphTwo");
+        //newParagraph.textContent = "...And this is paragraph two";
 
         // Step 3. select the parent element
         let mainContent = document.getElementsByTagName("main")[0];
 
         // Step 4. Add / Insert the element
+        //mainContent.appendChild(newParagraph);
         mainContent.appendChild(homeTitle);
         mainContent.appendChild(homeParagraph);
         mainContent.appendChild(backgroundButtons);
 
+
+        
         homeTitle.className = "text-light outline";
         homeParagraph.className = "text-light outline";
 
 
-        // INJECTING
+        
+        //newParagraph.className = "fs-6";
+
+        // another way of injecting content
         //let paragraphDiv = document.createElement("div");
         //let paragraphThree = `<p id="paragraphThree" class="fs-7 fw-bold">And this is the Third Paragraph</p>`;
         //paragraphDiv.innerHTML = paragraphThree;
 
-        // INSERTIONS
+        // insertions
         // example of inserting before a node
         //newParagraph.before(paragraphDiv);
+
         // example of inserting after a node
         //newParagraph.after(paragraphDiv);
 
-        // DELETIONS
-        // EXAMPLE of removing a single element
+        // deletions
+
+        // example of removing a single element
         //paragraphOneElement.remove();
-        // EXAMPLE of removeChild
+
+        // example of removeChild
         //mainContent.removeChild(paragraphOneElement);
 
-        // UPDATES/MODIFY
+        // update / modification
         //mainContent.firstElementChild.textContent = "Welcome Home!";
+/*
+        mainContent.innerHTML = `<h1 id="firstHeading" class="text-light outline">Welcome to WEBD6201 - Lab 1</h1>
+        <button type="button" id="updateBackground" class="btn-lg btn-dark">Update Background Colour!</button>
+         <p id="paragraphOne" class="fs-3 fw-bold text-light outline">This is my first Paragraph</p>
+        `;*/
 
+      //const backgroundButton = document.querySelector('#updateBackground');
+
+      //backgroundButton.addEventListener("click", bgFunction);
+        
     }
 
     function displayAbout()

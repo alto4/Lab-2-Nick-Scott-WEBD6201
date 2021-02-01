@@ -31,12 +31,11 @@ let myContact =
       {
         document.body.style.backgroundImage = "url('Assets/finn.png')";
       }
-      //Updates the background when the Chef Button is pressed!
+      //Updates the background when the Finn Button is pressed!
       function chefBackground()
       {
         document.body.style.backgroundImage = "url('Assets/nick.jpg')";
       }
-      //Updates the background when the Revert Button is pressed!
       function revertBackground()
       {
         document.body.style.backgroundImage = "url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)";
