@@ -25,7 +25,7 @@ let myContact =
       //Sets the default Background Image and Colour
       document.body.style.backgroundColor = "#49A4B0";
       document.body.style.backgroundImage = "url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)";
-
+      
       //Updates the background when the Finn Button is pressed!
       function finnBackground()
       {
@@ -85,7 +85,10 @@ let myContact =
         mainContent.appendChild(homeTitle);
         mainContent.appendChild(homeParagraph);
         mainContent.appendChild(backgroundButtons);
-
+        mainContent.style.background = "rgba(46,46,46,.94)";
+        mainContent.style.borderRadius = ".7rem";
+        mainContent.style.marginTop = "80px";
+        mainContent.classList.add("w-50", "p-5")
         homeTitle.className = "text-light outline";
         homeParagraph.className = "text-light outline";
 
