@@ -34,7 +34,7 @@ let myContact =
       //Updates the background when the Chef Button is pressed!
       function chefBackground()
       {
-        document.body.style.backgroundImage = "url('Assets/nick.jpg')";
+        document.body.style.backgroundImage = "url('Assets/chef.jpg')";
       }
       //Updates the background when the Revert Button is pressed!
       function revertBackground()
@@ -164,9 +164,8 @@ let myContact =
       aboutNickTextContainer.innerHTML = "<h3>Nick Sturch-Flint</h3>";
       let aboutNickText = document.createElement("p");
       aboutNickTextContainer.classList.add("col-lg-6", "p-4");
-      aboutNickText.innerText = "Nick is a full-stack developer based in Oshawa, Ontario. I enjoy woring with JavaScript, Ruby on Rails,\
-       and C#. Before coming to Durham College and pursuing a change in career direction, I worked as a cook and musician, and also \
-       teach guitar and piano lessons. I love creating things from scratching and breaking down complex problems.";
+      aboutNickText.innerText = "Nick is a full-stack developer based in Oshawa, Ontario. I enjoy working with C#, C++, Java, PHP/HTML/CSS, JavaScript, and MySQL. Before coming to Durham College for Computer Programming Analyst, I worked as an administrator with Re/Max. \
+      As a hobby I enjoy playing guitar or video games, reading a book, or writing my own! Learning new things and finding my own solutions to problems are something I enjoy and welcome in the work place!";
       aboutNickTextContainer.appendChild(aboutNickText);
       
       
@@ -174,12 +173,12 @@ let myContact =
       let nickResumeButton = document.createElement("a");
       nickResumeButton.innerText = "View Resume";
       nickResumeButton.classList.add("btn", "btn-success");
-      nickResumeButton.setAttribute("href", "./Assets/ScottAltonResume.pdf");
+      nickResumeButton.setAttribute("href", "./Assets/NickResume.pdf");
       nickResumeButton.setAttribute("target", "_blank");
       
       // Nick image element 
       let aboutNickImage = document.createElement("div");
-      aboutNickImage.innerHTML = `<img src="../Assets/nick.jpg" class="col-lg-6" />`
+      aboutNickImage.innerHTML = `<img src="../Assets/nick.png" class="col-lg-10" />`
       aboutNickImage.classList.add("col-lg-4");
       aboutNickContainer.classList.add("row");
       
