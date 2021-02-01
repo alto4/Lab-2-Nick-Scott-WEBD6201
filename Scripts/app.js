@@ -88,7 +88,8 @@ let myContact =
         mainContent.style.background = "rgba(46,46,46,.94)";
         mainContent.style.borderRadius = ".7rem";
         mainContent.style.marginTop = "80px";
-        mainContent.classList.add("w-50", "p-5")
+        mainContent.classList.add("w-75", "p-5");
+        mainContent.style.maxWidth = "800px";
         homeTitle.className = "text-light outline";
         homeParagraph.className = "text-light outline";
 
