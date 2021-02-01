@@ -340,7 +340,7 @@ let myContact =
         const navLinkItem = document.createElement("li");
         navLinkItem.classList.add("nav-item");
         const navLink = document.createElement("a");
-        navLink.classList.add("nav-link");
+        navLink.classList.add("nav-link*/");
         navLink.setAttribute("href", "human-resources.html")
         navLink.innerHTML = '<i class="fa fa-globe"></i> Human Resources';
         navLinkItem.appendChild(navLink);

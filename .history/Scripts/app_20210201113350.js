@@ -31,7 +31,8 @@ let myContact =
       document.body.style.backgroundColor = "#49A4B0";
       //document.querySelector("body").style.background = "url(../Assets/finn.png)";
       
-        let paragraphOneText = "This is a simple site to demonstrate DOM Manipulation for ICE 1";
+        let paragraphOneText =
+          "This is a simple site to demonstrate DOM Manipulation for ICE 1";
 
         let paragraphOneElement = document.getElementById("paragraphOne");
 

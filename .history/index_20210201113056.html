@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact-List</title>
+  <title>Home</title>
   <!-- CSS Section -->
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
@@ -17,14 +17,14 @@
     <!-- Main Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">WEBD6201</a>
+        <a class="navbar-brand text-success" href="index.html">WEBD6201</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" aria-current="page" href="index.html"><i class="fas fa-home fa-lg"></i> Home</a>
             </li>
 
@@ -37,7 +37,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="about.html"><i class="fas fa-info fa-lg"></i> About
+              <a class="nav-link active" aria-current="page" href="about.html"><i class="fas fa-info fa-lg"></i> About
                 Us</a>
             </li>
 
@@ -52,27 +52,15 @@
   </header>
 
   <!-- Main Content -->
-  <main class="container py-5 text-center">
-    <h1>Contact List</h1>
+  <div id="a">
+    <main class="container py-5 text-center">
+      <h1>Welcome to WEBD 6201</h1>
 
-    <div class="row">
-      <div class="col">
-        <table class="table w-75">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Full Name</th>
-              <th scope="col">Contact Number</th>
-              <th scope="col">Email Address</th>
-            </tr>
-          </thead>
-          <tbody id="contactList">
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </main>
+      <p id="paragraphOne"></p>
 
+
+    </main>
+  </div>
   <!-- Main Footer -->
   <footer>
     <nav class="navbar fixed-bottom navbar-light bg-light">
@@ -85,7 +73,6 @@
   <!-- Script Section-->
   <script src="./node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./Scripts/contact.js"></script>
   <script src="./Scripts/app.js"></script>
 </body>
 
