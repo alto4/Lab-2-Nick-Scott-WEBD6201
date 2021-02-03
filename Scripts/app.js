@@ -241,10 +241,10 @@ let myContact =
           demo: "#" 
         },
         {
-          name: "Sweet Project #3",
-          technologies: ["html", "css", "bootstrap"],
-          image: "./Assets/finnlogo.png",
-          github: "#",
+          name: "Simple Shares Database",
+          technologies: ["C#"],
+          image: "./Assets/finnlogo.
+          github: "https://github.com/GarlicButterBoy/Lab-3---NickSturchFlint",
           demo: "#" 
         },
       ]
@@ -283,7 +283,77 @@ let myContact =
 //#region SERVICES PAGE CONTENT
     function displayServices()
     {
+              // Store array of projects
+      let scottServices = [
+        {
+          name: "Service 1",
+          serviceType: "react",
+          image: "./Assets/chef.jpg",
+          content: "Explain your experience" 
+        },
+        {
+          name: "Service 2",
+          serviceType: "css",
+          image: "./Assets/chef.jpg",
+          content: "Explain your experience" 
+        },
+        {
+          name: "Service 3",
+          serviceType: "JS",
+          image: "./Assets/chef.jpg",
+          content: "Explain your experience" 
+        },
+      ];
 
+      let nickServices = [
+        {
+          name: "Service 1",
+          serviceType: "react",
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
+        },
+        {
+          name: "Service 2",
+          serviceType: "Web Design",
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
+        },
+        {
+          name: "Service 3",
+          serviceType: "JS",
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
+        },
+      ];
+      
+      let containerOne = document.querySelector(".container");
+      let servicesContainer = document.createElement("div");
+      servicesContainer.classList += "container mx-auto row projects";
+      containerOne.after(servicesContainer);
+      let servicesHTML = "";
+
+      /**
+       * displayProjects - renders an array of project objects into DOM
+       */
+      function displayServices(services) {
+        services.forEach(service => {
+          const { name,serviceType,image,content } = service;
+          servicesHTML += `
+            <div class="card text-center col-md-6 col-lg-4 p-4">
+              <h4>${name}</h4>
+              <h6>${serviceType}</h6>
+              <img src="${image}"class="mx-auto" />
+              <div>
+              <p>${content}</p>
+              </div>
+            </div>
+          `;
+        });
+      }  
+      
+      displayServices([...scottServices, ...nickServices]);
+
+      document.querySelector('.projects').innerHTML += servicesHTML;
     }
 //#endregion
 
@@ -378,6 +448,18 @@ let myContact =
         // Dynamically update Products nav link to Projects
         document.querySelectorAll("nav ul li a")[1].innerHTML = '<i class="fa fa-code"></i> Projects';
         
+        // Dynamically generate footer navbar
+        let mainContent = document.querySelector("main");
+        console.log(mainContent);
+
+        let footer = document.createElement("footer");
+        footer.innerHTML = `        
+        <nav class="navbar fixed-bottom text-white navbar-dark bg-dark justify-content-center">
+          <p class="my-2"><i class="far fa-copyright"></i> Copyright N/S Web Solutions, 2021.</p>
+        </nav>
+        `;
+        mainContent.after(footer);
+        
         // Create new nav link item and inject into navbar after about us
         const navLinkItem = document.createElement("li");
         navLinkItem.classList.add("nav-item");
@@ -410,10 +492,8 @@ let myContact =
           case "Contact-List":
               displayContactList();
             break;
-        }
-        
+        }        
     }
-
     window.addEventListener("load", Start);
 
 })();
