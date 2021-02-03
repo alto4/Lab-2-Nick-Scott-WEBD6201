@@ -243,7 +243,7 @@ let myContact =
         {
           name: "Simple Shares Database",
           technologies: ["C#"],
-          image: "./Assets/finnlogo.
+          image: "./Assets/nickproj1.png",
           github: "https://github.com/GarlicButterBoy/Lab-3---NickSturchFlint",
           demo: "#" 
         },
