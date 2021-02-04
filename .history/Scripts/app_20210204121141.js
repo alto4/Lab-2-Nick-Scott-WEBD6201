@@ -236,8 +236,8 @@ let myContact =
         {
           name: "JavaFX",
           technologies: ["Java"],
-          image: "./Assets/nickproj2.jpg",
-          github: "https://github.com/GarlicButterBoy/OOP3200-Nick-Kaif-JavaLab5",
+          image: "./Assets/finnlogo.png",
+          github: "#",
           demo: "https://www.youtube.com/watch?v=rARQPHTxDQ4" 
         },
         {

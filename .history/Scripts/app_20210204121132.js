@@ -235,10 +235,10 @@ let myContact =
         },
         {
           name: "JavaFX",
-          technologies: ["Java"],
-          image: "./Assets/nickproj2.jpg",
-          github: "https://github.com/GarlicButterBoy/OOP3200-Nick-Kaif-JavaLab5",
-          demo: "https://www.youtube.com/watch?v=rARQPHTxDQ4" 
+          technologies: ["html", "css", "bootstrap"],
+          image: "./Assets/finnlogo.png",
+          github: "#",
+          demo: "#" 
         },
         {
           name: "Simple Shares Database",
