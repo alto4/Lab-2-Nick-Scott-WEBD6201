@@ -154,7 +154,7 @@ let myContact =
       // Scott image
       let aboutScottImage = document.createElement("div");
       aboutScottImage.innerHTML = `<img src="../Assets/scottaltonpic.jpg" class="col-lg-6" />`
-      aboutScottImage.classList.add("col-lg-4");
+      aboutScottImage.classList.add("col-lg-4", "about-img");
       aboutScottContainer.classList.add("row");
       
       // Inject elements into about container
@@ -183,7 +183,7 @@ let myContact =
       // Nick image element 
       let aboutNickImage = document.createElement("div");
       aboutNickImage.innerHTML = `<img src="../Assets/nick.png" class="col-lg-10" />`
-      aboutNickImage.classList.add("col-lg-4");
+      aboutNickImage.classList.add("col-lg-4", "about-img");
       aboutNickContainer.classList.add("row");
       
       // Inject elements into about container
@@ -251,7 +251,7 @@ let myContact =
 
       let container = document.querySelector(".container");
       let projectsContainer = document.createElement("div");
-      projectsContainer.classList += "container mx-auto row projects";
+      projectsContainer.classList += "container mx-auto row g-lg-3 justify-content-center projects";
       container.after(projectsContainer);
       let projectsHTML = "";
 
@@ -262,7 +262,7 @@ let myContact =
         projects.forEach(project => {
           const { name, technologies, image, github, demo } = project;
            projectsHTML += `
-            <div class="card text-center col-md-6 col-lg-4 p-4">
+            <div class="card text-center col-md-5 col-lg-3 p-4 my-2 mx-2">
               <h4>${name}</h4>
               <img src="${image}"class="mx-auto" />
               <div class="row p-4">
@@ -328,7 +328,7 @@ let myContact =
       
       let containerOne = document.querySelector(".container");
       let servicesContainer = document.createElement("div");
-      servicesContainer.classList += "container mx-auto row projects";
+      servicesContainer.classList += "container mx-auto row g-lg-3 justify-content-center services";
       containerOne.after(servicesContainer);
       let servicesHTML = "";
 
@@ -339,10 +339,10 @@ let myContact =
         services.forEach(service => {
           const { name,serviceType,image,content } = service;
           servicesHTML += `
-            <div class="card text-center col-md-6 col-lg-4 p-4">
+            <div class="card text-center col-md-5 col-lg-3 p-4 my-2 mx-2">
               <h4>${name}</h4>
               <h6>${serviceType}</h6>
-              <img src="${image}"class="mx-auto" />
+              <img src="${image}"class="mx-auto services-img" />
               <div>
               <p>${content}</p>
               </div>
@@ -353,7 +353,7 @@ let myContact =
       
       displayServices([...scottServices, ...nickServices]);
 
-      document.querySelector('.projects').innerHTML += servicesHTML;
+      document.querySelector('.services').innerHTML += servicesHTML;
     }
 //#endregion
 
