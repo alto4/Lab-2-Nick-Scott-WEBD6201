@@ -315,7 +315,7 @@ let myContact =
         {
           serviceType: "Application Support",
           name: "Nicholas Sturch-Flint",
-          image: "https://images.pexels.com/photos/4560083/pexels-photo-4560083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+          image: "./Assets/finn.png",
           content: "Already have a system in place, but don't know how (or don't have time!) to keep it updated? \
                     After some information collection about the system, we'll be able to help you keep it in check!" 
         },

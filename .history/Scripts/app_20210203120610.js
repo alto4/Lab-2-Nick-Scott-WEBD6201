@@ -154,7 +154,7 @@ let myContact =
       // Scott image
       let aboutScottImage = document.createElement("div");
       aboutScottImage.innerHTML = `<img src="../Assets/scottaltonpic.jpg" class="col-lg-6" />`
-      aboutScottImage.classList.add("col-lg-4", "about-img");
+      aboutScottImage.classList.add("col-lg-4");
       aboutScottContainer.classList.add("row");
       
       // Inject elements into about container
@@ -183,7 +183,7 @@ let myContact =
       // Nick image element 
       let aboutNickImage = document.createElement("div");
       aboutNickImage.innerHTML = `<img src="../Assets/nick.png" class="col-lg-10" />`
-      aboutNickImage.classList.add("col-lg-4", "about-img");
+      aboutNickImage.classList.add("col-lg-4");
       aboutNickContainer.classList.add("row");
       
       // Inject elements into about container
@@ -243,7 +243,7 @@ let myContact =
         {
           name: "Simple Shares Database",
           technologies: ["C#"],
-          image: "./Assets/nickproj1.png",
+          image: "./Assets/finnlogo.
           github: "https://github.com/GarlicButterBoy/Lab-3---NickSturchFlint",
           demo: "#" 
         },
@@ -251,7 +251,7 @@ let myContact =
 
       let container = document.querySelector(".container");
       let projectsContainer = document.createElement("div");
-      projectsContainer.classList += "container mx-auto row g-lg-3 justify-content-center projects";
+      projectsContainer.classList += "container mx-auto row projects";
       container.after(projectsContainer);
       let projectsHTML = "";
 
@@ -262,7 +262,7 @@ let myContact =
         projects.forEach(project => {
           const { name, technologies, image, github, demo } = project;
            projectsHTML += `
-            <div class="card text-center col-md-5 col-lg-3 p-4 my-2 mx-2">
+            <div class="card text-center col-md-6 col-lg-4 p-4">
               <h4>${name}</h4>
               <img src="${image}"class="mx-auto" />
               <div class="row p-4">
@@ -286,66 +286,66 @@ let myContact =
               // Store array of projects
       let scottServices = [
         {
-          serviceType: "Web Development",
-          name: "Scott Alton",
-          image: "./Assets/webdev.jpeg",
-          content: "Help improve your businesses online presence with a new, customized website."
+          name: "Service 1",
+          serviceType: "react",
+          image: "./Assets/chef.jpg",
+          content: "Explain your experience" 
         },
         {
-          serviceType: "Web Design",
-          name: "Scott Alton",
-          image: "./Assets/design.jpeg",
-          content: "Interested in a new look for your brand? N/S has the design skills to create a new brand profile.",  
+          name: "Service 2",
+          serviceType: "css",
+          image: "./Assets/chef.jpg",
+          content: "Explain your experience" 
         },
         {
-          serviceType: "Copywriting",
-          name: "Scott Alton",
-          content: "Worried about your spelling and grammar? Let our in-house copywriters create polished content.", 
-          image: "./Assets/copywriting.jpeg",
+          name: "Service 3",
+          serviceType: "JS",
+          image: "./Assets/chef.jpg",
+          content: "Explain your experience" 
         },
       ];
 
       let nickServices = [
         {
-          serviceType: "Software Development",
-          name: "Nicholas Sturch-Flint",
-          image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-          content: "Have an idea for an app or website? Reach out to us and we can give you a quote on it!" 
+          name: "Service 1",
+          serviceType: "react",
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
         },
         {
-          serviceType: "Application Support",
-          name: "Nicholas Sturch-Flint",
-          image: "https://images.pexels.com/photos/4560083/pexels-photo-4560083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-          content: "Already have a system in place, but don't know how (or don't have time!) to keep it updated? \
-                    After some information collection about the system, we'll be able to help you keep it in check!" 
+          name: "Service 2",
+          serviceType: "Web Design",
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
         },
         {
-          serviceType: "System Development Lifecycle",
-          name: "Nicholas Sturch-Flint",
-          image: "https://ak.picdn.net/shutterstock/videos/1020779143/thumb/11.jpg",
-          content: "Have a system that you want to build but don't know where to start? Don't worry! With continued communication \
-                    we will help to walk you through the life-cycle as well as building your dream project!" 
+          name: "Service 3",
+          serviceType: "JS",
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
         },
       ];
       
       let containerOne = document.querySelector(".container");
       let servicesContainer = document.createElement("div");
-      servicesContainer.classList += "container mx-auto row g-lg-3 justify-content-center services mb-3";
+      servicesContainer.classList += "container mx-auto row projects";
       containerOne.after(servicesContainer);
       let servicesHTML = "";
 
       /**
-       * displayServices - renders an array of project objects into DOM
+       * displayProjects - renders an array of project objects into DOM
        */
       function displayServices(services) {
         services.forEach(service => {
-          const { name,serviceType, image, content } = service;
+          const { name,serviceType,image,content } = service;
           servicesHTML += `
-            <div class="card text-center col-md-5 col-lg-3 p-4 my-2 mx-2">
-              <h4>${serviceType}</h4>
-              <h6>${name}</h6>
+            <div class="card text-center col-md-6 col-lg-4 p-4">
+              <h4>${name}</h4>
+              <h6>${serviceType}</h6>
+              <img src="${image}"class="mx-auto" />
+              <div>
               <p>${content}</p>
-              <img src="${image}"class="mx-auto services-img mb-3" />
+              </div>
             </div>
           `;
         });
@@ -353,7 +353,7 @@ let myContact =
       
       displayServices([...scottServices, ...nickServices]);
 
-      document.querySelector('.services').innerHTML += servicesHTML;
+      document.querySelector('.projects').innerHTML += servicesHTML;
     }
 //#endregion
 
@@ -390,7 +390,7 @@ let myContact =
 
         let sendButton = document.getElementById("sendButton");
         sendButton.addEventListener("click", function(event){
-            event.preventDefault();
+            //event.preventDefault();
             let contact = new Contact(fullName.value, contactNumber.value, emailAddress.value);
             console.log(contact.serialize());
             
@@ -403,8 +403,6 @@ let myContact =
             contactNumber.value = "";
             emailAddress.value = "";
             message.value = "";
-
-            location.href = "index.html";
           });
     }
 //#endregion

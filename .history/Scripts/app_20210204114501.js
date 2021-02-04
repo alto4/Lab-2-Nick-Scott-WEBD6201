@@ -287,19 +287,19 @@ let myContact =
       let scottServices = [
         {
           serviceType: "Web Development",
-          name: "Scott Alton",
+          serviceType: "",
           image: "./Assets/webdev.jpeg",
           content: "Help improve your businesses online presence with a new, customized website."
         },
         {
-          serviceType: "Web Design",
-          name: "Scott Alton",
+          name: "Web Design",
+          serviceType: "",
           image: "./Assets/design.jpeg",
           content: "Interested in a new look for your brand? N/S has the design skills to create a new brand profile.",  
         },
         {
-          serviceType: "Copywriting",
-          name: "Scott Alton",
+          name: "Copywriting",
+          serviceType: "",
           content: "Worried about your spelling and grammar? Let our in-house copywriters create polished content.", 
           image: "./Assets/copywriting.jpeg",
         },
@@ -307,30 +307,28 @@ let myContact =
 
       let nickServices = [
         {
+          name: "Nicholas Sturch-Flint",
           serviceType: "Software Development",
-          name: "Nicholas Sturch-Flint",
-          image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-          content: "Have an idea for an app or website? Reach out to us and we can give you a quote on it!" 
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
         },
         {
-          serviceType: "Application Support",
           name: "Nicholas Sturch-Flint",
-          image: "https://images.pexels.com/photos/4560083/pexels-photo-4560083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-          content: "Already have a system in place, but don't know how (or don't have time!) to keep it updated? \
-                    After some information collection about the system, we'll be able to help you keep it in check!" 
+          serviceType: "Web Design",
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
         },
         {
-          serviceType: "System Development Lifecycle",
           name: "Nicholas Sturch-Flint",
-          image: "https://ak.picdn.net/shutterstock/videos/1020779143/thumb/11.jpg",
-          content: "Have a system that you want to build but don't know where to start? Don't worry! With continued communication \
-                    we will help to walk you through the life-cycle as well as building your dream project!" 
+          serviceType: "JS",
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
         },
       ];
       
       let containerOne = document.querySelector(".container");
       let servicesContainer = document.createElement("div");
-      servicesContainer.classList += "container mx-auto row g-lg-3 justify-content-center services mb-3";
+      servicesContainer.classList += "container mx-auto row g-lg-3 justify-content-center services";
       containerOne.after(servicesContainer);
       let servicesHTML = "";
 
@@ -342,10 +340,10 @@ let myContact =
           const { name,serviceType, image, content } = service;
           servicesHTML += `
             <div class="card text-center col-md-5 col-lg-3 p-4 my-2 mx-2">
-              <h4>${serviceType}</h4>
-              <h6>${name}</h6>
+              <h4>${name}</h4>
+              <h6>${serviceType}</h6>
               <p>${content}</p>
-              <img src="${image}"class="mx-auto services-img mb-3" />
+              <img src="${image}"class="mx-auto services-img" />
             </div>
           `;
         });

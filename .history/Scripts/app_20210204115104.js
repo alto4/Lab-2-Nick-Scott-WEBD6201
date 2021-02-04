@@ -309,15 +309,14 @@ let myContact =
         {
           serviceType: "Software Development",
           name: "Nicholas Sturch-Flint",
-          image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-          content: "Have an idea for an app or website? Reach out to us and we can give you a quote on it!" 
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
         },
         {
-          serviceType: "Application Support",
+          serviceType: "Web Design",
           name: "Nicholas Sturch-Flint",
-          image: "https://images.pexels.com/photos/4560083/pexels-photo-4560083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-          content: "Already have a system in place, but don't know how (or don't have time!) to keep it updated? \
-                    After some information collection about the system, we'll be able to help you keep it in check!" 
+          image: "./Assets/finn.png",
+          content: "Explain your experience" 
         },
         {
           serviceType: "System Development Lifecycle",
@@ -330,7 +329,7 @@ let myContact =
       
       let containerOne = document.querySelector(".container");
       let servicesContainer = document.createElement("div");
-      servicesContainer.classList += "container mx-auto row g-lg-3 justify-content-center services mb-3";
+      servicesContainer.classList += "container mx-auto row g-lg-3 justify-content-center services";
       containerOne.after(servicesContainer);
       let servicesHTML = "";
 
