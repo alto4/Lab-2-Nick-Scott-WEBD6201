@@ -390,7 +390,7 @@ let myContact =
 
         let sendButton = document.getElementById("sendButton");
         sendButton.addEventListener("click", function(event){
-            //event.preventDefault();
+            event.preventDefault();
             let contact = new Contact(fullName.value, contactNumber.value, emailAddress.value);
             console.log(contact.serialize());
             
@@ -403,6 +403,8 @@ let myContact =
             contactNumber.value = "";
             emailAddress.value = "";
             message.value = "";
+
+            location.href = "index.html";
           });
     }
 //#endregion
