@@ -182,7 +182,7 @@ let myContact =
       
       // Nick image element 
       let aboutNickImage = document.createElement("div");
-      aboutNickImage.innerHTML = `<img src="./Assets/nick.png" class="col-lg-10" />`
+      aboutNickImage.innerHTML = `<img src="../Assets/nick.png" class="col-lg-10" />`
       aboutNickImage.classList.add("col-lg-4", "about-img");
       aboutNickContainer.classList.add("row");
       
