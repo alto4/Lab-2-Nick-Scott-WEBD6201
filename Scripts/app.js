@@ -1,25 +1,13 @@
-/* custom JavaScript goes here */
-
-//IIFE - Immediately Invoked Function Expression
-//AKA - Anonymous Self-Executing Function
-//Closure - limits scope leak
+/* Authors: Nick Sturch-Flint - 100303769 & Scott Alton - 100762638
+ * Date   : 2021-02-04
+ * Program: This is the javascript page that holds our functions that hold our website together.
+ */
 
 "use strict";
-/* Example of a class being created with brand new functions
-let myContact = 
-{
-  "firstName":"Nick SF",
-  "contactNumber":"905-123-4567",
-  "emailAddress":"email@test.com",
-  "saysHello":function() { console.log(`${fullName} says Hello!`); },
-  "someOtherObject":{  "friendsList":["Tony", "Stephen", "Peter"]  }
-
-};*/
 
 //#region HOME/INDEX PAGE CONTENT
 (function()
 {
-
     function displayHome()
     {
       //Sets the default Background Image and Colour
@@ -93,27 +81,6 @@ let myContact =
         homeTitle.className = "text-light outline";
         homeParagraph.className = "text-light outline";
 
-
-        // INJECTING
-        //let paragraphDiv = document.createElement("div");
-        //let paragraphThree = `<p id="paragraphThree" class="fs-7 fw-bold">And this is the Third Paragraph</p>`;
-        //paragraphDiv.innerHTML = paragraphThree;
-
-        // INSERTIONS
-        // example of inserting before a node
-        //newParagraph.before(paragraphDiv);
-        // example of inserting after a node
-        //newParagraph.after(paragraphDiv);
-
-        // DELETIONS
-        // EXAMPLE of removing a single element
-        //paragraphOneElement.remove();
-        // EXAMPLE of removeChild
-        //mainContent.removeChild(paragraphOneElement);
-
-        // UPDATES/MODIFY
-        //mainContent.firstElementChild.textContent = "Welcome Home!";
-
     }
 //#endregion
 
@@ -123,14 +90,16 @@ let myContact =
       // Grab container element
       let container = document.querySelector(".container");
 
-      // Heading
+      // Heading element
       let heading = document.createElement("h1");
       heading.innerText = "Meet Scott & Nick";
       heading.style.textDecoration = "underline";
       heading.style.textDecorationColor = "green";
+
+      // Inject page heading into the DOM
       container.appendChild(heading);
       
-      // About Scott 
+      // About Scott container and contents
       let aboutScottContainer = document.createElement("div");
       let aboutScottTextContainer = document.createElement("div");
       aboutScottTextContainer.innerHTML = '<h3 class="pb-4">Scott Alton</h3>';
@@ -141,9 +110,10 @@ let myContact =
        and C#. Before coming to Durham College and pursuing a change in career direction, I worked as a cook and musician, and also \
        teach guitar and piano lessons. I love creating things from scratching and breaking down complex problems.";
       
+      // Inject Scott's about text into about container
       aboutScottTextContainer.appendChild(aboutScottText);
             
-      // Button to view Scott resume
+      // Button to view Scott's resume
       let scottResumeButton = document.createElement("a");
       scottResumeButton.innerText = "View Resume";
       scottResumeButton.classList.add("btn", "btn-success");
@@ -151,7 +121,7 @@ let myContact =
       scottResumeButton.setAttribute("target", "_blank");
       aboutScottTextContainer.appendChild(scottResumeButton);
 
-      // Scott image
+      // Scott image 
       let aboutScottImage = document.createElement("div");
       aboutScottImage.innerHTML = `<img src="./Assets/scottaltonpic.jpg" class="col-lg-6" />`
       aboutScottImage.classList.add("col-lg-4", "about-img");
@@ -161,7 +131,7 @@ let myContact =
       aboutScottContainer.appendChild(aboutScottTextContainer);
       aboutScottContainer.appendChild(aboutScottImage);
 
-      // About Nick
+      // About Nick container and contents 
       let aboutNickContainer = document.createElement("div");
       let aboutNickTextContainer = document.createElement("div");
       aboutNickContainer.classList.add("my-5", "p-4", "justify-content-center");
@@ -171,9 +141,8 @@ let myContact =
       aboutNickText.innerText = "Nick is a full-stack developer based in Oshawa, Ontario. I enjoy working with C#, C++, Java, PHP/HTML/CSS, JavaScript, and MySQL. Before coming to Durham College for Computer Programming Analyst, I worked as an administrator with Re/Max. \
       As a hobby I enjoy playing guitar or video games, reading a book, or writing my own! Learning new things and finding my own solutions to problems are something I enjoy and welcome in the work place!";
       aboutNickTextContainer.appendChild(aboutNickText);
-      
-      
-      // Button to view Nick resume
+            
+      // Button to view Nick's resume
       let nickResumeButton = document.createElement("a");
       nickResumeButton.innerText = "View Resume";
       nickResumeButton.classList.add("btn", "btn-success");
@@ -191,6 +160,7 @@ let myContact =
       aboutNickTextContainer.appendChild(nickResumeButton);
       aboutNickContainer.appendChild(aboutNickTextContainer);
       
+      // Inject both about containers into the DOM
       container.appendChild(aboutScottContainer);
       container.appendChild(aboutNickContainer);
        
@@ -200,7 +170,7 @@ let myContact =
 //#region PROJECTS/PRODUCTS PAGE CONTENT
     function displayProjects()
     {
-      // Store array of projects
+      // Store array of projects completed by Scott
       let scottProjects = [
         {
           name: "The Shoppies Awards",
@@ -225,6 +195,7 @@ let myContact =
         },
       ];
 
+      // Store array of projects completed by Nick
       let nickProjects = [
         {
           name: "C++ Input/Output Application",
@@ -235,7 +206,7 @@ let myContact =
         },
         {
           name: "JavaFX",
-          technologies: ["Java"],
+          technologies: ["Java", "JavaF"],
           image: "./Assets/nickproj2.jpg",
           github: "https://github.com/GarlicButterBoy/OOP3200-Nick-Kaif-JavaLab5",
           demo: "https://www.youtube.com/watch?v=rARQPHTxDQ4" 
@@ -249,14 +220,18 @@ let myContact =
         },
       ]
 
+      // Build projects container
       let container = document.querySelector(".container");
       let projectsContainer = document.createElement("div");
       projectsContainer.classList += "container mx-auto row g-lg-3 justify-content-center projects";
       container.after(projectsContainer);
+
+      // String to store HTML for project cards
       let projectsHTML = "";
 
       /**
        * displayProjects - renders an array of project objects into DOM
+       * @param {Array} projects
        */
       function displayProjects(projects) {
         projects.forEach(project => {
@@ -264,8 +239,8 @@ let myContact =
            projectsHTML += `
             <div class="card text-center col-md-5 col-lg-3 p-4 my-2 mx-2">
               <h4>${name}</h4>
-              <img src="${image}"class="mx-auto" />
-              <div class="row p-4">
+              <img src="${image}" class="mx-auto" />
+              <div class="row p-4 ">
                 <a href="${github}" target="_blank" class="col-6 btn btn-dark">Code</a>
                 <a href="${demo}" target="_blank" class="col-6 btn btn-success">Demo</a>
               </div>
@@ -274,6 +249,7 @@ let myContact =
         });
       }
 
+      // Call displayProjects function to render HTML for all project cards
       displayProjects([...scottProjects, ...nickProjects]);
 
       document.querySelector('.projects').innerHTML += projectsHTML;
@@ -283,7 +259,7 @@ let myContact =
 //#region SERVICES PAGE CONTENT
     function displayServices()
     {
-              // Store array of projects
+      // Store array of services
       let scottServices = [
         {
           serviceType: "Web Development",
@@ -328,20 +304,24 @@ let myContact =
         },
       ];
       
+      // Create container to store services cards
       let containerOne = document.querySelector(".container");
       let servicesContainer = document.createElement("div");
-      servicesContainer.classList += "container mx-auto row g-lg-3 justify-content-center services mb-3";
+      servicesContainer.classList += "container mx-auto row g-lg-3 mb-5 justify-content-center services mb-3";
       containerOne.after(servicesContainer);
+
+      // Empty string to store HTML containing services cards
       let servicesHTML = "";
 
       /**
        * displayServices - renders an array of project objects into DOM
+       * @param {Array} services
        */
       function displayServices(services) {
         services.forEach(service => {
           const { name,serviceType, image, content } = service;
           servicesHTML += `
-            <div class="card text-center col-md-5 col-lg-3 p-4 my-2 mx-2">
+            <div class="card text-center col-md-5 col-lg-3 p-4 mb-5 mx-2">
               <h4>${serviceType}</h4>
               <h6>${name}</h6>
               <p>${content}</p>
@@ -351,6 +331,7 @@ let myContact =
         });
       }  
       
+      // Call displayServices function to render HTML for all project cards
       displayServices([...scottServices, ...nickServices]);
 
       document.querySelector('.services').innerHTML += servicesHTML;
@@ -358,72 +339,73 @@ let myContact =
 //#endregion
 
 //#region CONTACT PAGE CONTENT
+    /**
+     * A function to display contact.html 
+     */
     function displayContact()
-    {
+    {     
+      let heading = document.querySelector("h1");
+      let subHeading = document.createElement("p");
+      subHeading.className += "lead w-50 mb-4 text-bold mx-auto";
+      subHeading.innerText = "Get in touch to discuss your next project today! We are always looking to take on exciting work."
+      heading.after(subHeading);
 
-        let heading = document.querySelector("h1");
-        let subHeading = document.createElement("p");
-        subHeading.className += "lead w-50 mb-4 text-bold mx-auto";
-        subHeading.innerText = "Get in touch to discuss your next project today! We are always looking to take on exciting work."
-        heading.after(subHeading);
+      let messageArea = document.getElementById("messageArea");
+      messageArea.hidden = true;
 
-        let messageArea = document.getElementById("messageArea");
-        messageArea.hidden = true;
+      // form validation
+      let fullName = document.getElementById("fullName");
+      fullName.addEventListener("blur", function() {
+        if(fullName.value.length < 2)
+        {
+          fullName.focus();
+          fullName.select();
+          messageArea.hidden = false;
+          messageArea.className = "alert alert-danger w-50 mx-auto";
+          messageArea.textContent = "Please enter an appropriate Name";
+        }
+        else
+        {
+          messageArea.removeAttribute("class");
+          messageArea.hidden = true;
+        }  
+      });
 
-        // form validation
-        let fullName = document.getElementById("fullName");
-        fullName.addEventListener("blur", function() {
-            if(fullName.value.length < 2)
-            {
-                fullName.focus();
-                fullName.select();
-                messageArea.hidden = false;
-                messageArea.className = "alert alert-danger w-50 mx-auto";
-                messageArea.textContent = "Please enter an appropriate Name";
-            }
-            else
-            {
-                messageArea.removeAttribute("class");
-                messageArea.hidden = true;
-            }  
-        });
-
-        let sendButton = document.getElementById("sendButton");
-        sendButton.addEventListener("click", function(event){
-            event.preventDefault();
-            let contact = new Contact(fullName.value, contactNumber.value, emailAddress.value);
-            console.log(contact.serialize());
+      // sendButton - submits form and redirects user to homepage once validated
+      let sendButton = document.getElementById("sendButton");
+      sendButton.addEventListener("click", function(event){
+        event.preventDefault();
+        let contact = new Contact(fullName.value, contactNumber.value, emailAddress.value);
+        console.log(contact.serialize);
             
-            if(contact.serialize()) //checking if the serialized object exists
-            {
-              localStorage.setItem((localStorage.length + 1).toString(), contact.serialize());
-            }
+        // Check if the serialized object exists once validations are performed, and so, redirect user to homepage
+        if(contact.serialize()) 
+        {
+          localStorage.setItem((localStorage.length + 1).toString(), contact.serialize());
+        }       
 
-            fullName.value = "";
-            contactNumber.value = "";
-            emailAddress.value = "";
-            message.value = "";
-
-            location.href = "index.html";
-          });
+        location.href = "index.html";
+      });
     }
 //#endregion
 
 //#region CONTACT LIST DISPLAY PAGE CONTENT
+    /**
+     * A function to display contact-list.html
+     */
     function displayContactList()
     {
 
+      // Check if records exist in local store
       if(localStorage.length > 0)
       {
         let contactList = document.getElementById("contactList");
-
         let data = "";
 
+        // Loop through each record in localStorage and render 
         for (let index = 0; index < localStorage.length; index++)
         {
           let contactData = localStorage.getItem((index + 1).toString());
-
-          console.log(contactData);
 
           let contact = new Contact();
           contact.deserialize(contactData);
@@ -435,18 +417,15 @@ let myContact =
                   <td>${contact.EmailAddress}</td>
                   </tr>`;
         }
-
         contactList.innerHTML = data;
       }
-
-
     }
 //#endregion
-
+    /**
+     * A function to load all of the pages
+     */
     function Start()
     {
-        console.log("App Started...");
-
         // Dynamically update Products nav link to Projects
         document.querySelectorAll("nav ul li a")[1].innerHTML = '<i class="fa fa-code"></i> Projects';
         
@@ -454,12 +433,15 @@ let myContact =
         let mainContent = document.querySelector("main");
         console.log(mainContent);
 
+        // Create footer
         let footer = document.createElement("footer");
         footer.innerHTML = `        
         <nav class="navbar fixed-bottom text-white navbar-dark bg-dark justify-content-center">
           <p class="my-2"><i class="far fa-copyright"></i> Copyright N/S Web Solutions, 2021.</p>
         </nav>
         `;
+
+        // Inject footer into bottom of each page
         mainContent.after(footer);
         
         // Create new nav link item and inject into navbar after about us
@@ -471,9 +453,10 @@ let myContact =
         navLink.innerHTML = '<i class="fa fa-globe"></i> Human Resources';
         navLinkItem.appendChild(navLink);
         
+        // Insert HR link into navbar
         document.querySelectorAll("nav ul li")[3].after(navLinkItem)
 
-
+        //A switch-case that checks for the title of the current .html page and displays a different display funciton depending
         switch (document.title) 
         {
           case "Home":
