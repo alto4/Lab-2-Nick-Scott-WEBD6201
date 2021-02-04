@@ -286,22 +286,22 @@ let myContact =
               // Store array of projects
       let scottServices = [
         {
-          name: "Service 1",
-          serviceType: "react",
-          image: "./Assets/chef.jpg",
-          content: "Explain your experience" 
+          name: "Web Development",
+          serviceType: "",
+          image: "./Assets/webdev.jpeg",
+          content: "Help improve your businesses online presence with a new, customized website."
         },
         {
-          name: "Service 2",
-          serviceType: "css",
-          image: "./Assets/chef.jpg",
-          content: "Explain your experience" 
+          name: "Web Design",
+          serviceType: "",
+          image: "./Assets/design.jpeg",
+          content: "Interested in a new look for your brand? N/S has the design skills to create a new brand profile.",  
         },
         {
-          name: "Service 3",
-          serviceType: "JS",
-          image: "./Assets/chef.jpg",
-          content: "Explain your experience" 
+          name: "Copywriting",
+          serviceType: "",
+          content: "Worried about your spelling and grammar? Let our in-house copywriters create polished content.", 
+          image: "./Assets/copywriting.jpeg",
         },
       ];
 
@@ -337,15 +337,13 @@ let myContact =
        */
       function displayServices(services) {
         services.forEach(service => {
-          const { name,serviceType,image,content } = service;
+          const { name,serviceType, image, description, content } = service;
           servicesHTML += `
             <div class="card text-center col-md-5 col-lg-3 p-4 my-2 mx-2">
               <h4>${name}</h4>
               <h6>${serviceType}</h6>
-              <img src="${image}"class="mx-auto services-img" />
-              <div>
               <p>${content}</p>
-              </div>
+              <img src="${image}"class="mx-auto services-img" />
             </div>
           `;
         });
