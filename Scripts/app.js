@@ -106,7 +106,7 @@
       let aboutScottText = document.createElement("p");
       aboutScottContainer.classList.add("my-5", "border-bottom", "p-4", "justify-content-center");
       aboutScottTextContainer.classList.add("col-lg-6", "p-4");
-      aboutScottText.innerText = "Scott is a full-stack developer based in Whitby, Ontario. I enjoy woring with JavaScript, Ruby on Rails,\
+      aboutScottText.innerText = "I am a developer based in Whitby, Ontario. I enjoy working with JavaScript, Ruby on Rails,\
        and C#. Before coming to Durham College and pursuing a change in career direction, I worked as a cook and musician, and also \
        teach guitar and piano lessons. I love creating things from scratching and breaking down complex problems.";
       
