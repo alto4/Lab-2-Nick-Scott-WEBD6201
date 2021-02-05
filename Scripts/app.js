@@ -108,7 +108,7 @@
       aboutScottTextContainer.classList.add("col-lg-6", "p-4");
       aboutScottText.innerText = "I am a developer based in Whitby, Ontario. I enjoy working with JavaScript, Ruby on Rails,\
        and C#. Before coming to Durham College and pursuing a change in career direction, I worked as a cook and musician, and also \
-       teach guitar and piano lessons. I love creating things from scratching and breaking down complex problems.";
+       teach guitar and piano lessons. I love creating things from scratch and breaking down complex problems.";
       
       // Inject Scott's about text into about container
       aboutScottTextContainer.appendChild(aboutScottText);
