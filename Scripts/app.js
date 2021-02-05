@@ -230,10 +230,10 @@
       let projectsHTML = "";
 
       /**
-       * displayProjects - renders an array of project objects into DOM
+       * displayProjectCards - renders an array of project objects into DOM
        * @param {Array} projects
        */
-      function displayProjects(projects) {
+      function displayProjectCards(projects) {
         projects.forEach(project => {
           const { name, technologies, image, github, demo } = project;
            projectsHTML += `
@@ -250,7 +250,7 @@
       }
 
       // Call displayProjects function to render HTML for all project cards
-      displayProjects([...scottProjects, ...nickProjects]);
+      displayProjectCards([...scottProjects, ...nickProjects]);
 
       document.querySelector('.projects').innerHTML += projectsHTML;
     }
