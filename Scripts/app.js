@@ -314,10 +314,10 @@
       let servicesHTML = "";
 
       /**
-       * displayServices - renders an array of project objects into DOM
+       * displayServiceCards - renders an array of project objects into DOM
        * @param {Array} services
        */
-      function displayServices(services) {
+      function displayServiceCards(services) {
         services.forEach(service => {
           const { name,serviceType, image, content } = service;
           servicesHTML += `
@@ -325,14 +325,14 @@
               <h4>${serviceType}</h4>
               <h6>${name}</h6>
               <p>${content}</p>
-              <img src="${image}"class="mx-auto services-img mb-3" />
+              <img src="${image}" class="mx-auto services-img mb-3" />
             </div>
           `;
         });
       }  
       
-      // Call displayServices function to render HTML for all project cards
-      displayServices([...scottServices, ...nickServices]);
+      // Call displayServiceCards function to render HTML for all project cards
+      displayServiceCards([...scottServices, ...nickServices]);
 
       document.querySelector('.services').innerHTML += servicesHTML;
     }
