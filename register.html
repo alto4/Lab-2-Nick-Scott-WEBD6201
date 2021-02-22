@@ -16,37 +16,48 @@
   <header>
     <!-- Main Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid d-flex justify-content-space-between">
+      <div class="container-fluid">
         <a class="navbar-brand text-success" href="index.html"><img class="logo" src="./Assets/ns-logo.png" /></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"><i class="fas fa-home fa-lg"></i>
-                Home</a>
-            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="products.html"><i class="fas fa-cog fa-lg"></i> Products</a>
-            </li>
+        <div class="navbar-right">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"><i class="fas fa-home fa-lg"></i>
+                  Home</a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="services.html"><i class="fas fa-map fa-lg"></i> Services</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="products.html"><i class="fas fa-cog fa-lg"></i>
+                  Products</a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="about.html"><i class="fas fa-info fa-lg"></i> About
-                Us</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="services.html"><i class="fas fa-map fa-lg"></i>
+                  Services</a>
+              </li>
 
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="contact.html"><i class="fas fa-phone fa-lg"></i> Contact
-                Us</a>
-            </li>
-          </ul>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="about.html"><i class="fas fa-info fa-lg"></i> About
+                  Us</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="contact.html"><i class="fas fa-phone fa-lg"></i> Contact
+                  Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="login-container">
+          <button class="px-5 btn btn-outline-success btn-login">
+            <a class="text-white" href="login.html">Login</a>
+          </button>
         </div>
       </div>
     </nav>
@@ -56,8 +67,12 @@
   <main class="container" id="mainContent">
     <div class="row">
       <div class="mx-auto col-lg-6 col-md-8 col-sm-12 ">
-        <div class="login" id="contentArea">
+        <div class="register" id="contentArea">
           <h1 class="text-center py-5 display-4">Register</h1>
+
+          <div id="messageArea">
+            <h3 class="bg-danger px-3 py-2 mx-3">Hello</h3>
+          </div>
           <form id="registerForm" class="mx-auto bg-dark text-white p-4 mx-4">
 
             <div class="form-group p-2">

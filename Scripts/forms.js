@@ -19,6 +19,9 @@ $("#loginForm .btn-success").on("click", function(e){
 
 $(".btn-login").on("click", logoutUser);
 
+/**
+ * logoutUser - toggles text of login button and removes welcome message
+ */
 function logoutUser() 
 {
   $("#welcomeMessage").remove();
@@ -26,4 +29,14 @@ function logoutUser()
   $(".login-container").remove($("#welcomeMessage"));
   name = "";
   password = "";
+}
+
+/** 
+ * displayRegister
+ */
+function displayRegister()
+{
+  let messageArea = $("#messageArea");
+  messageArea.hide();
+
 }

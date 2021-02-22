@@ -421,6 +421,18 @@
       }
     }
 //#endregion
+
+
+    function displayLogin()
+    {
+
+    }
+
+    function displayRegister()
+    {
+
+    }
+
     /**
      * A function to load all of the pages
      */
@@ -476,6 +488,12 @@
             break;
           case "Contact-List":
               displayContactList();
+            break;
+          case "Login":
+              displayLogin();
+            break;
+          case "Register":
+              displayRegister();
             break;
         }        
     }
