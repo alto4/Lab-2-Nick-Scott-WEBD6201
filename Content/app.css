@@ -31,3 +31,40 @@ h1 {
 .projects, .services {
   margin-bottom: 100px;
 }
+
+/* Login Form Styles */
+#loginForm,
+#registerForm {
+  border-radius: 10px;
+  max-width: 440px;
+  margin: auto;
+}
+
+.input-group-icon { 
+  padding: 7px 2px 7px 12px;
+  border: 3px dotted #198754;
+  border-radius: 50%;
+}
+
+/* Register Form Styles */
+#registerForm .btn-success {
+  width: 90% !important;
+}
+
+#registerForm hr {
+  border-bottom: 3px dotted white;
+  height: 5px;
+  background-color: #000;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.login-container {
+  width: 500px;
+  text-align: end;
+}
+
+.btn-login {
+  border-width: 3px;
+  font-size: 1.2rem;
+}
