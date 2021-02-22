@@ -31,12 +31,116 @@ function logoutUser()
   password = "";
 }
 
+function testFirstName()
+    {
+      let messageArea = $("#messageArea").hide();
+      let firstNamePattern = /([A-Z][a-z]{1,25})/;
+
+        
+        $("#firstName").on("blur", function()
+        {
+          if(!firstNamePattern.test($(this).val()))
+          {
+            $(this).trigger("focus").trigger("select");
+            messageArea.show().addClass("alert alert-danger").text("Please enter a valid last name.ast name.");
+          }
+          else
+          {
+              messageArea.removeAttr("class").hide();
+          }
+        });
+    }
+
+    function testLastName()
+    {
+      let messageArea = $("#messageArea").hide();
+      let lastNamePattern = /([A-Z][a-z]{1,25})/;
+        
+        $("#lastName").on("blur", function()
+        {
+          if(!lastNamePattern.test($(this).val()))
+          {
+            $(this).trigger("focus").trigger("select");
+            messageArea.show().addClass("alert alert-danger").text("Please enter a valid last name.");
+          }
+          else
+          {
+            messageArea.removeAttr("class").hide();
+          }
+        });
+    }
+
+    function testEmailAddress()
+    {
+      let messageArea = $("#messageArea");
+      let emailAddressPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+        
+        $("#emailAddress").on("blur", function()
+        {
+          if(!emailAddressPattern.test($(this).val()))
+          {
+            $(this).trigger("focus").trigger("select");
+            messageArea.show().addClass("alert alert-danger").text("Please enter a valid Email Address.");
+          }
+          else
+          {
+              messageArea.removeAttr("class").hide();
+          }
+        });
+    }
+
+    function testPassword()
+    {
+      let messageArea = $("#messageArea");
+      let passwordPattern = /^.{6,}$/;
+
+      $("#confirmPassword").on("blur", function()
+      {
+        if (!passwordPattern.test($(this).val())) 
+        {
+          $("#password").trigger("focus").trigger("select");
+
+          messageArea.show().addClass("alert alert-danger").text("Please make sure password is more than 5 characters in length.");
+        }
+        else if ($("#password").val() !== $(this).val())
+        {
+          $("#password").trigger("focus").trigger("select");
+
+          messageArea.show().addClass("alert alert-danger").text("Please make sure password and confirm password values match exactly.");
+        }
+        else
+        {
+          messageArea.removeAttr("class").hide();
+        }
+      });
+
+      
+    }
+
+    function formValidation()
+    {
+      testFirstName();
+      testLastName();
+      testEmailAddress();
+      testPassword();
+    }
+
 /** 
  * displayRegister
  */
 function displayRegister()
 {
-  let messageArea = $("#messageArea");
-  messageArea.hide();
+  // Inject message area before form
+  $("form").before(`<div id="messageArea">
+  <h3 class="bg-danger px-3 py-2 mx-3">Hello</h3>
+</div>`);
 
+  // 
+  $("#messageArea").hide();
+
+  formValidation();
+
+  
 }
+
+displayRegister();
