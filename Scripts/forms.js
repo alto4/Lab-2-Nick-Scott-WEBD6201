@@ -122,9 +122,7 @@ function formValidation() {
  */
 function displayRegister() {
   // Inject message area before form
-  $("form").before(`<div id="messageArea">
-  <h3 class="bg-danger px-3 py-2 mx-3">Hello</h3>
-</div>`);
+  $("form").before(`<div id="messageArea"></div>`);
 
   //
   $("#messageArea").hide();
@@ -149,6 +147,15 @@ function displayRegister() {
       console.log(user.toString());
 
       $("form")[0].reset();
+
+      $("#messageArea")
+        .show()
+        .addClass("alert alert-success")
+        .text("Successfully registered.");
+
+      setTimeout(function () {
+        $("#messageArea").hide();
+      }, 3000);
     } else {
       console.log("Fix your input please.!");
     }
