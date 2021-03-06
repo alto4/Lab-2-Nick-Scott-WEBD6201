@@ -5,19 +5,19 @@
   class User {
     // getters and setters
     get FirstName() {
-      return this.m_displayName;
+      return this.m_firstName;
     }
 
     set FirstName(value) {
-      this.m_displayName = value;
+      this.m_firstName = value;
     }
 
     get LastName() {
-      return this.m_displayName;
+      return this.m_lastName;
     }
 
     set LastName(value) {
-      this.m_displayName = value;
+      this.m_lastName = value;
     }
 
     get Username() {

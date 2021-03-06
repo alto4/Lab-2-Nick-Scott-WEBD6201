@@ -148,7 +148,7 @@ function displayRegister() {
       console.log("---------------------");
       console.log(user.toString());
 
-      clearForm();
+      $("form")[0].reset();
     } else {
       console.log("Fix your input please.!");
     }
