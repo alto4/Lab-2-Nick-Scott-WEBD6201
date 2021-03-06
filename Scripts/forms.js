@@ -9,7 +9,7 @@ $("#loginForm .btn-success").on("click", function (e) {
 
   if ($("#welcomeMessage").text().length < 1) {
     $(".login-container button").before(
-      '<span id="welcomeMessage" class="text-white px-4">Hello ' +
+      '<span id="welcomeMessage" class="text-white px-4 text-nowrap my-auto">Hello ' +
         name +
         "</span>"
     );

@@ -5,9 +5,10 @@ h1 {
 }
 
 .outline {
-    color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  }
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
 
 .projects img {
   width: 200px;
@@ -15,11 +16,11 @@ h1 {
 }
 
 .logo {
-  width: 80px; 
-  padding: .5rem;
+  width: 80px;
+  padding: 0.5rem;
 }
 
-.about-img img{
+.about-img img {
   max-width: 400px;
 }
 
@@ -28,7 +29,8 @@ h1 {
   height: 200px;
 }
 
-.projects, .services {
+.projects,
+.services {
   margin-bottom: 100px;
 }
 
@@ -40,7 +42,7 @@ h1 {
   margin: auto;
 }
 
-.input-group-icon { 
+.input-group-icon {
   padding: 7px 2px 7px 12px;
   border: 3px dotted #198754;
   border-radius: 50%;
@@ -62,6 +64,7 @@ h1 {
 .login-container {
   width: 500px;
   text-align: end;
+  max-height: 45px;
 }
 
 .btn-login {
