@@ -16,7 +16,6 @@ $("#loginForm .btn-success").on("click", function(e){
   console.log(`Name: ${name}\nPassword: ${password}`);
 });
 
-
 $(".btn-login").on("click", logoutUser);
 
 /**

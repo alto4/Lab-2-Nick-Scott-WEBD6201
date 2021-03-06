@@ -1,65 +1,70 @@
 "use strict";
 // User Class
 
-((core)=>
-{
-  class User 
-  {
+((core) => {
+  class User {
     // getters and setters
-    get DisplayName() 
-    {
+    get FirstName() {
       return this.m_displayName;
     }
-  
-    set DisplayName(value) 
-    {
+
+    set FirstName(value) {
       this.m_displayName = value;
     }
-  
-    get EmailAddress() 
-    {
-      return this.m_emailAddress;
-    }
-  
-    set EmailAddress(value) 
-    {
-      this.m_emailAddress = value;
+
+    get LastName() {
+      return this.m_displayName;
     }
 
-    get Username() 
-    {
+    set LastName(value) {
+      this.m_displayName = value;
+    }
+
+    get Username() {
       return this.m_username;
     }
-  
-    set Username(value) 
-    {
+
+    set Username(value) {
       this.m_username = value;
     }
 
-    get Password() 
-    {
+    get EmailAddress() {
+      return this.m_emailAddress;
+    }
+
+    set EmailAddress(value) {
+      this.m_emailAddress = value;
+    }
+
+    get Password() {
       return this.m_password;
     }
-  
-    set Password(value) 
-    {
+
+    set Password(value) {
       this.m_password = value;
     }
-  
+
     // constructor
 
     /**
      * Creates an instance of User.
-     * @param {string} [displayName=""]
-     * @param {string} [emailAddress=""]
+     * @param {string} [firstName=""]
+     * @param {string} [lastName=""]
      * @param {string} [username=""]
+     * @param {string} [emailAddress=""]
      * @param {string} [password=""]
      */
-    constructor(displayName = "", emailAddress = "", username = "", password="") 
-    {
-      this.DisplayName = displayName;
-      this.EmailAddress = emailAddress;
+    constructor(
+      firstName = "",
+      lastName = "",
+      username = "",
+      emailAddress = "",
+      password = ""
+    ) {
+      this.FirstName = firstName;
+      this.LastName = lastName;
       this.Username = username;
+      this.EmailAddress = emailAddress;
       this.Password = password;
     }
 
@@ -70,9 +75,8 @@
      *
      * @returns {string}
      */
-    toString() 
-    {
-      return `Display Name     : ${this.DisplayName} \nEmail Address : ${this.EmailAddress} \nUsername : ${this.Username}`;
+    toString() {
+      return `First Name     : ${this.FirstName} \nLast Name     : ${this.LastName} \nUsername : ${this.Username} \nEmail Address : ${this.EmailAddress} `;
     }
 
     /**
@@ -80,13 +84,13 @@
      *
      * @returns {Object}
      */
-    toJSON()
-    {
+    toJSON() {
       return {
-        "DisplayName": this.DisplayName,
-        "EmailAddress": this.EmailAddress,
-        "Username": this.Username
-      }
+        FirstName: this.FirstName,
+        LastName: this.LastName,
+        Username: this.Username,
+        EmailAddress: this.EmailAddress,
+      };
     }
 
     /**
@@ -94,11 +98,11 @@
      *
      * @param {Object} data
      */
-    fromJSON(data)
-    {
-      this.DisplayName = data.DisplayName;
-      this.EmailAddress = data.EmailAddress;
+    fromJSON(data) {
+      this.FirstName = data.FirstName;
+      this.LastName = data.LastName;
       this.Username = data.Username;
+      this.EmailAddress = data.EmailAddress;
       this.Password = data.Password;
     }
 
@@ -107,14 +111,15 @@
      *
      * @returns {string}
      */
-    serialize()
-    {
-      if(this.DisplayName !== "" && this.EmailAddress !== "" && this.Username !== "")
-      {
-        return `${this.DisplayName},${this.EmailAddress},${this.Username}`;
-      }
-      else 
-      {
+    serialize() {
+      if (
+        this.FirstName !== "" &&
+        this.LastName !== "" &&
+        this.EmailAddress !== "" &&
+        this.Username !== ""
+      ) {
+        return `${this.FirstName},${this.LastName},${this.EmailAddress},${this.Username}`;
+      } else {
         console.error("One or more properties of the User is empty");
         return null;
       }
@@ -126,15 +131,14 @@
      * @param {string} data
      * @return {void}
      */
-    deserialize(data)
-    {
+    deserialize(data) {
       let propertyArray = data.split(",");
-      this.DisplayName = propertyArray[0];
-      this.EmailAddress = propertyArray[1];
+      this.FirstName = propertyArray[0];
+      this.LastName = propertyArray[1];
       this.Username = propertyArray[2];
+      this.EmailAddress = propertyArray[3];
     }
   }
 
   core.User = User;
-
-})(core || (core={}));
+})(core || (core = {}));
