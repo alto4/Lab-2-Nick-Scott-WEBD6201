@@ -42,7 +42,7 @@ function testFirstName() {
       messageArea
         .show()
         .addClass("alert alert-danger")
-        .text("Please enter a valid last name.ast name.");
+        .text("Please enter a valid last name.");
     } else {
       messageArea.removeAttr("class").hide();
     }
@@ -68,10 +68,10 @@ function testLastName() {
 
 function testEmailAddress() {
   let messageArea = $("#messageArea");
-  let emailAddressPattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
+  let emailAddressPattern = /^([a-zA-Z0-9._%-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,6})*$/;
 
   $("#emailAddress").on("blur", function () {
-    if (!emailAddressPattern.test($(this).val())) {
+    if (!emailAddressPattern.test($(this).val()) || $(this).val().length < 1) {
       $(this).trigger("focus").trigger("select");
       messageArea
         .show()

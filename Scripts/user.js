@@ -76,7 +76,7 @@
      * @returns {string}
      */
     toString() {
-      return `First Name     : ${this.FirstName} \nLast Name     : ${this.LastName} \nUsername : ${this.Username} \nEmail Address : ${this.EmailAddress} `;
+      return `First Name     : ${this.FirstName} \nLast Name      : ${this.LastName} \nUsername       : ${this.Username} \nEmail Address  : ${this.EmailAddress} `;
     }
 
     /**
