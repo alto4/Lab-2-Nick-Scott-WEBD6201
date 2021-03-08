@@ -1,3 +1,8 @@
+/* Authors: Nick Sturch-Flint - 100303769 & Scott Alton - 100762638
+ * Date   : 2021-03-04
+ * Program: This file contains the validations for the login and register forms.
+ */
+
 // Upon login button with username and password, show name in nav between contact and login/logout link
 $("#loginForm .btn-success").on("click", function (e) {
   e.preventDefault();

@@ -1,3 +1,8 @@
+/* Authors: Nick Sturch-Flint - 100303769 & Scott Alton - 100762638
+ * Date   : 2021-03-04
+ * Program: This page contains the class declaration for the Contact class.
+ */
+
 "use strict";
 
 //Contact Class
@@ -55,6 +60,7 @@ class Contact {
       emailAddress: this.EmailAddress,
     };
   }
+
   /**
    * Method converts the Contact into a comma-seperated value string
    * @returns {String}
@@ -73,6 +79,7 @@ class Contact {
       return null;
     }
   }
+
   /**
    * Method takes a comma-seperated data string and assigns the values to the contact class properties
    * @param {string} data

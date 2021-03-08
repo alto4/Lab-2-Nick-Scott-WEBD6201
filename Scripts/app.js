@@ -1,5 +1,5 @@
 /* Authors: Nick Sturch-Flint - 100303769 & Scott Alton - 100762638
- * Date   : 2021-02-04
+ * Date   : 2021-03-04
  * Program: This is the javascript page that holds our functions that hold our website together.
  */
 
