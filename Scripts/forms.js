@@ -4,7 +4,8 @@
  */
 
 // Upon login button with username and password, show name in nav between contact and login/logout link
-$("#loginForm .btn-success").on("click", function (e) {
+$("#loginForm .btn-success").on("click", function (e) 
+{
   e.preventDefault();
   console.log("Clicked!");
 
@@ -12,24 +13,29 @@ $("#loginForm .btn-success").on("click", function (e) {
   let name = $("#userName").val();
   let password = $("#password").val();
 
-  if ($("#welcomeMessage").text().length < 1) {
-    $(".login-container button").before(
+  //Welcome the user with a prompt on successful login
+  if ($("#welcomeMessage").text().length < 1) 
+  {
+    $(".login-container button").before( 
       '<span id="welcomeMessage" class="text-white px-4 text-nowrap my-auto">Hello ' +
         name +
-        "</span>"
-    );
-    $(".login-container button").text("Logout");
+        "</span>");
+
+    $(".login-container button").text("Logout"); //update the login button to logout, when logged in
   }
 
   console.log(`Name: ${name}\nPassword: ${password}`);
 });
 
-$(".btn-login").on("click", logoutUser);
+$(".btn-login").on("click", logoutUser); //logs out the user when they click the logout button
 
 /**
  * logoutUser - toggles text of login button and removes welcome message
+ * 
+ * @returns {void}
  */
-function logoutUser() {
+function logoutUser() 
+{
   $("#welcomeMessage").remove();
   $(".login-container button").text("Login");
   $(".login-container").remove($("#welcomeMessage"));
@@ -37,70 +43,113 @@ function logoutUser() {
   password = "";
 }
 
-function testFirstName() {
+/**
+ * Method is used to validate entries for first name
+ * 
+ * @returns {void}
+ */
+function testFirstName() 
+{
+  //sets the flashing message to hidden
   let messageArea = $("#messageArea").hide();
   let firstNamePattern = /([A-Z][a-z]{1,25})/;
-
+  //validates strings based on regex
   $("#firstName").on("blur", function () {
-    if (!firstNamePattern.test($(this).val())) {
+    if (!firstNamePattern.test($(this).val())) 
+    {
       $(this).trigger("focus").trigger("select");
       messageArea
         .show()
         .addClass("alert alert-danger")
         .text("Please enter a valid last name.");
-    } else {
-      messageArea.removeAttr("class").hide();
+    } 
+    else 
+    {
+      messageArea.removeAttr("class").hide(); //if validation fails, flash message
     }
   });
 }
 
-function testLastName() {
+/**
+ * Method is used to validate entries for last name
+ * 
+ * @returns {void}
+ */
+function testLastName() 
+{
+  //sets the flashing message to hidden
   let messageArea = $("#messageArea").hide();
   let lastNamePattern = /([A-Z][a-z]{1,25})/;
-
-  $("#lastName").on("blur", function () {
-    if (!lastNamePattern.test($(this).val())) {
+  //validates strings based on regex
+  $("#lastName").on("blur", function () 
+  {
+    if (!lastNamePattern.test($(this).val())) 
+    {
       $(this).trigger("focus").trigger("select");
       messageArea
         .show()
         .addClass("alert alert-danger")
-        .text("Please enter a valid last name.");
-    } else {
-      messageArea.removeAttr("class").hide();
+        .text("Please enter a valid last name."); 
+    } 
+    else 
+    {
+      messageArea.removeAttr("class").hide(); //if validation fails, flash the message
     }
   });
 }
-
-function testEmailAddress() {
-  let messageArea = $("#messageArea");
+/**
+ * Method is used to validate the entries for email address
+ * 
+ * @returns {void}
+ */
+function testEmailAddress() 
+{
+  //sets the flashing message to hidden
+  let messageArea = $("#messageArea").hide();
   let emailAddressPattern = /^([a-zA-Z0-9._%-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,6})*$/;
 
-  $("#emailAddress").on("blur", function () {
-    if (!emailAddressPattern.test($(this).val()) || $(this).val().length < 1) {
+  //validates a string using regex
+  $("#emailAddress").on("blur", function () 
+  {
+    if (!emailAddressPattern.test($(this).val()) || $(this).val().length < 1) 
+    {
       $(this).trigger("focus").trigger("select");
       messageArea
         .show()
         .addClass("alert alert-danger")
         .text("Please enter a valid Email Address.");
-    } else {
-      messageArea.removeAttr("class").hide();
+    } 
+    else 
+    {
+      messageArea.removeAttr("class").hide(); //if validation fails, flash the message
     }
   });
 }
 
-function testPassword() {
-  let messageArea = $("#messageArea");
+/**
+ * Method is used for validating password entries
+ * 
+ * @returns {void}
+ */
+function testPassword() 
+{
+  //sets the flashing message to hidden
+  let messageArea = $("#messageArea").hide();
   let passwordPattern = /^.{6,}$/;
-
-  $("#confirmPassword").on("blur", function () {
-    if (!passwordPattern.test($(this).val())) {
+  //validates a string using regex
+  $("#confirmPassword").on("blur", function () 
+  {
+    if (!passwordPattern.test($(this).val()))  //regex validation
+    {
       $("#password").trigger("focus").trigger("select");
 
       messageArea
         .show()
         .addClass("alert alert-danger")
         .text("Please make sure password is more than 5 characters in length.");
-    } else if ($("#password").val() !== $(this).val()) {
+    } 
+    else if ($("#password").val() !== $(this).val()) //confirming that both passwords match
+    {
       $("#password").trigger("focus").trigger("select");
 
       messageArea
@@ -109,13 +158,21 @@ function testPassword() {
         .text(
           "Please make sure password and confirm password values match exactly."
         );
-    } else {
+    } 
+    else //if either thing fails, flash an error message
+    {
       messageArea.removeAttr("class").hide();
     }
   });
 }
 
-function formValidation() {
+/**
+ * Function runs the validation methods created to run on a blur from the respective textboxes
+ * 
+ * @returns {void}
+ */
+function formValidation() 
+{
   testFirstName();
   testLastName();
   testEmailAddress();
@@ -123,22 +180,27 @@ function formValidation() {
 }
 
 /**
- * displayRegister
+ * displayRegister - Method displays the register form for the user to input their data
+ * 
+ * @returns {void}
  */
-function displayRegister() {
+function displayRegister() 
+{
   // Inject message area before form
   $("form").before(`<div id="messageArea"></div>`);
 
-  //
+  //hides the message 
   $("#messageArea").hide();
-  $("#firstName").focus();
+  //$("#firstName").focus();
 
-  formValidation();
+  formValidation(); //validates on leaving a textbox
 
-  $("#registerButton").on("click", (e) => {
-    e.preventDefault();
+  $("#registerButton").on("click", (e) => 
+  {
+    e.preventDefault(); //prevents the default action for the register button on form
 
-    let user = new core.User(
+    let user = new core.User //creates a new user using the values input
+    (
       firstName.value,
       lastName.value,
       firstName.value,
@@ -146,7 +208,8 @@ function displayRegister() {
       password.value
     );
 
-    if (messageArea.style.display === "none") {
+    if (messageArea.style.display === "none") 
+    {
       console.log("New user registered");
       console.log("---------------------");
       console.log(user.toString());
@@ -156,15 +219,17 @@ function displayRegister() {
       $("#messageArea")
         .show()
         .addClass("alert alert-success")
-        .text("Successfully registered.");
+        .text("Successfully registered."); //Displays a positive flash message of success
 
       setTimeout(function () {
         $("#messageArea").hide();
       }, 3000);
-    } else {
-      console.log("Fix your input please.!");
+    }
+    else
+    {
+      console.log("Fix your input please.!"); //Something went wrong!
     }
   });
 }
-
+//Displays the form
 displayRegister();

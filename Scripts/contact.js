@@ -8,22 +8,28 @@
 //Contact Class
 class Contact {
   //getters and setters
-  get FullName() {
+  get FullName() 
+  {
     return this.m_fullName;
   }
-  get ContactNumber() {
+  get ContactNumber() 
+  {
     return this.m_conactNumber;
   }
-  get EmailAddress() {
+  get EmailAddress() 
+  {
     return this.m_emailAddress;
   }
-  set FullName(value) {
+  set FullName(value) 
+  {
     this.m_fullName = value;
   }
-  set ContactNumber(value) {
+  set ContactNumber(value) 
+  {
     this.m_conactNumber = value;
   }
-  set EmailAddress(value) {
+  set EmailAddress(value) 
+  {
     this.m_emailAddress = value;
   }
 
@@ -45,7 +51,8 @@ class Contact {
    * Overrides the toString method to print the Contact class
    * @returns {string}
    */
-  toString() {
+  toString() 
+  {
     return `Full Name: ${this.m_fullName}\nPhone: ${this.m_contactNumber}\nEmail: ${this.m_emailAddress}`;
   }
 
@@ -53,7 +60,8 @@ class Contact {
    * This method returns a JSON Object
    * @returns {Object}
    */
-  toJSON() {
+  toJSON() 
+  {
     return {
       fullName: this.FullName,
       contactNumber: this.ContactNumber,
@@ -70,9 +78,12 @@ class Contact {
       this.FullName !== "" &&
       this.ContactNumber !== "" &&
       this.EmailAddress !== ""
-    ) {
+    ) 
+    {
       return `${this.FullName},${this.ContactNumber},${this.EmailAddress}`;
-    } else {
+    } 
+    else 
+    {
       console.error(
         "Error: One of more of the Contact Properties are empty or null."
       );
