@@ -6,23 +6,28 @@
 "use strict";
 
 //#region HOME/INDEX PAGE CONTENT
-(function () {
-  function displayHome() {
+(function () 
+{
+  function displayHome() 
+  {
     //Sets the default Background Image and Colour
     document.body.style.backgroundColor = "#49A4B0";
     document.body.style.backgroundImage =
       "url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)";
 
     //Updates the background when the Finn Button is pressed!
-    function finnBackground() {
+    function finnBackground() 
+    {
       document.body.style.backgroundImage = "url('Assets/finn.png')";
     }
     //Updates the background when the Chef Button is pressed!
-    function chefBackground() {
+    function chefBackground() 
+    {
       document.body.style.backgroundImage = "url('Assets/chef.jpg')";
     }
     //Updates the background when the Revert Button is pressed!
-    function revertBackground() {
+    function revertBackground() 
+    {
       document.body.style.backgroundImage =
         "url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)";
     }
@@ -462,9 +467,7 @@
             sessionStorage.setItem("user", newUser.serialize());
 
             messageArea.removeAttr("class").hide();
-           
-            username.textContent = ""; //CLEAR THE text fields on success TODO:
-            password.textContent = "";
+            username.textContent
 
             location.href = "contact-list.html";
           } else {
