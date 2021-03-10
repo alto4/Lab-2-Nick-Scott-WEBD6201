@@ -23,6 +23,10 @@ $("#loginForm .btn-success").on("click", function (e) {
     $(".login-container button").text("Logout"); //update the login button to logout, when logged in
   }
 
+  // Clear form fields
+  $("#userName").val("");
+  $("#password").val("");
+
   console.log(`Name: ${name}\nPassword: ${password}`);
 });
 
@@ -57,7 +61,7 @@ function testFirstName() {
       messageArea
         .show()
         .addClass("alert alert-danger")
-        .text("Please enter a valid last name.");
+        .text("Please enter a valid first name.");
     } else {
       messageArea.removeAttr("class").hide(); //if validation fails, flash message
     }
