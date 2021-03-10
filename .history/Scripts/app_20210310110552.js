@@ -468,7 +468,7 @@
 
             messageArea.removeAttr("class").hide();
            
-            username.textContent = ""; //CLEAR THE text fields on success TODO:
+            username.val() = "";
             password.textContent = "";
 
             location.href = "contact-list.html";

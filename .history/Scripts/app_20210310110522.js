@@ -467,8 +467,7 @@
             sessionStorage.setItem("user", newUser.serialize());
 
             messageArea.removeAttr("class").hide();
-           
-            username.textContent = ""; //CLEAR THE text fields on success TODO:
+            username.textContent = "";
             password.textContent = "";
 
             location.href = "contact-list.html";
