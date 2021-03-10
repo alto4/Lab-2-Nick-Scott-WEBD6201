@@ -98,7 +98,7 @@ function testLastName() {
 function testEmailAddress() {
   //sets the flashing message to hidden
   let messageArea = $("#messageArea").hide();
-  let emailAddressPattern = /^([a-zA-Z0-9._%-]{2,}@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,6})*$/;
+  let emailAddressPattern = /^([a-zA-Z0-9._%-]{4,}@[a-zA-Z0-9.-]{1,}\.[a-zA-Z]{1,6})*$/;
 
   //validates a string using regex
   $("#emailAddress").on("blur", function () {
